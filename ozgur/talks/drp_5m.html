@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>DRP Turkiye</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/theme/night.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section data-background-color="orange">
+					<h2><b>Annihilators of the singularity category</b></h2>
+					<p class="r-fit-text">Ozgur Esentepe - University of Leeds<br> DRP Turkiye - 5 Minute Talks - August 8, 2023
+                    </p>
+                    <p><small>Slideas available at sntp.ca/ozgur</small></p>
+				</section>
+
+				<section>
+					<section>
+						<h3>In primary school:</h3>
+                        <p class="fragment">We learn numbers and we learn that if $xy = 0$, then either $x = 0$ or $y = 0$. <span class="fragment">Equivalently, two nonzero numbers can not multiply to zero. </span></p>	
+					</section>
+					<section>
+						<h3>In secondary school:</h3>
+                        <p class="fragment">We learn polynomials and we learn that if $pq = 0$, then either $p = 0$ or $q = 0$. <span class="fragment">Equivalently, two nonzero polynomials can not multiply to zero. </span>
+                             <span class="fragment">This is how we solve polynomial equations like $(x-1)(x-3) = 0$. </span> 
+                             <span class="fragment"><small>I am in secondary school so characteristic is zero.</small></span>
+                            </p>
+					</section>
+					<section>
+						<h3>We get older:</h3>
+                        <p class="fragment">We learn matrices and we learn that matrix multiplication is not as well behaved as well ordinary multiplication. <span class="fragment">Two nonzero matrices <i>may</i> multiply to zero </span> <span class="fragment">
+                            \[
+                            \begin{align*}
+                            \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix} \begin{bmatrix}1 & 1 \\ -1 & -1 \end{bmatrix} = \begin{bmatrix}0 &0  \\ 0 & 0 \end{bmatrix}
+                            \end{align*}       
+                            \]
+                        </span> </p>
+					</section>
+				</section>
+
+				<section data-background-color="rgb(230, 182, 28)">
+					<section>
+						<h3>My column space is in your null space.</h3>
+					</section>
+                    <section>
+                        <p>Unpacking the definition of matrix multiplication, we see that 
+                            \[
+                            \begin{align*}
+                            AB = 0 \iff \mathrm{col}(B) \subseteq \mathrm{null}(A)
+                            \end{align*}.
+                            \] </p>
+                            <p class="fragment">We may have $0 = \mathrm{col}(B) \subseteq \mathrm{null}(A)$.</p>
+
+                            <p class="fragment">We may have $0 \subseteq \mathrm{col}(B) = \mathrm{null}(A)$.</p>
+                    </section>
+                    <section>
+                        <h2>The question is:</h2>
+                        <p>How different is the column space of $B$ than the null space of $A$?</p>
+                        <p class="fragment">We can measure this by the quotient 
+                        \[
+                        \begin{align*}
+                        H = \mathrm{null(A)}/\mathrm{col(B)}. 
+                        \end{align*}
+                        \]    
+                        </p>
+                    </section>
+				</section>
+				<section data-background-color="rgb(33, 184, 204)">
+					<section>
+						<h3>Chain complexes</h3>
+                        \[
+                        \begin{align*} 
+                            V_1 \xrightarrow{f_1} V_2 \xrightarrow{f_2} V_3
+                        \end{align*}
+                        \]
+                        with the property that $f_2 \circ f_1 =0$.
+                        <p class="fragment">Equivalently, $\mathrm{im}(f_1) \subseteq \mathrm{ker}(f_2)$.</p>
+                        <p class="fragment">Interested in $H = \mathrm{ker}(f_2)/\mathrm{im}(f_1)$. </p>
+					</section>
+					<section>
+						<h3>Make it longer.</h3>
+                        \[
+                        \begin{align*} 
+                          V_0 \xrightarrow{f_0}  V_1 \xrightarrow{f_1} V_2 \xrightarrow{f_2} V_3 \xrightarrow{f_3} V_4
+                        \end{align*}
+                        \]
+                        <p class="r-fit-text">
+                        with the property that $f_{i+1} \circ f_i =0$ for all $i = 0,1,2$.
+                    </p>
+					</section>
+                    <section>
+						<h3>And longer.</h3>
+                        \[
+                        \begin{align*} 
+                          \ldots \to V_0 \xrightarrow{f_0}  V_1 \xrightarrow{f_1} V_2 \xrightarrow{f_2} V_3 \xrightarrow{f_3} V_4 \to \ldots 
+                        \end{align*}
+                        \]
+                        <p class="r-fit-text">
+                        with the property that $f_{i+1} \circ f_i =0$ for all $i \in \mathbb{Z}$.
+                    </p>
+					</section>
+                    <section>
+						<h3>You can do this for every ring.</h3>
+                        Let $R$ be a ring and $V_i$ be $R$-modules with $R$-linear maps $f_i$ in between them.
+                        \[
+                        \begin{align*} 
+                          C \colon \ldots \to V_0 \xrightarrow{f_0}  V_1 \xrightarrow{f_1} V_2 \xrightarrow{f_2} V_3 \xrightarrow{f_3} V_4 \to \ldots 
+                        \end{align*}
+                        \]
+                        <p class="r-fit-text">
+                        with the property that $f_{i+1} \circ f_i =0$ for all $i \in \mathbb{Z}$.
+                    </p>
+                    <p class="fragment">Interested in $H_i(C) = \mathrm{ker}(f_{i+1})/\mathrm{im}(f_i) $</p>
+					</section>
+
+
+				</section>
+				<section data-background-color="white">
+					<section>
+						<h3>Every vector space has a basis.</h3>
+                        <p class="fragment" class="r-fit-text">If $R$ is a vector space, then any finitely generated $R$-module $V$ (i.e. a vector space over $R$) has a basis. <span class="fragment">This basis gives us an isomorphism $V \cong R^n$ for some $n$.</span></p>
+					</section>
+                    <section>
+                    <h3>Free modules</h3>
+                    <p>If $R$ is some arbitrary(*) ring, then we say that a finitely generated module $V$ is free if it is isomorphic to $R^n$ for some $n$.</p>
+                    <p class="fragment"><b>Not</b> every module is free.</p>
+                    <p class="fragment">BUT</p>
+                    <p class="fragment">There is a "notion of isomorphism" which you can get after a "technical construction" which allows you to say that every module is "isomorphic in that sense" to a chain complex of free modules.  </p>
+                    </section>
+                    <section>
+                        <h3>Free resolutions</h3>
+                        Given an $R$-module $V$, we can create a complex $C$ such that 
+                        \[
+                        \begin{align*} 
+                        H_n(C) \cong \begin{cases} 
+                        V & \text{ if } n = 0 \\
+                        0 & \text{ else} 
+                        \end{cases}
+                        \end{align*}
+                        \]
+                    </section>
+				</section>
+				<section data-background-color="pink">
+					<section>
+						<h3>Ext.</h3>
+                        Let $V$ be a module and $F$ be a free resolution of $V$.
+                        \[
+                        F \colon \ldots \to F_{-1} \xrightarrow{d_{-1}}  F_0 \xrightarrow{d_0} F_1 \xrightarrow{d_1} F_2 \xrightarrow{d_2} F_3 \to \ldots
+                        \]
+                        <p class="fragment">
+                            That is, we have $\mathrm{ker}{d_{i+1}} = \mathrm{im}{d_i}$ everywhere except one place and that place we have homology isomorphic to $V$.
+                        </p>
+					</section>
+                    <section>
+                        <p>In fact, $F$ can be made to look like this: 
+                            \[
+                            F \colon \ldots \to F_{-2} \xrightarrow{d_{-2}}  F_{-1} \xrightarrow{d_{-1}} F_0 \xrightarrow{d_0} 0
+                            \]
+                        </p>
+                    </section>
+                    <section>
+                        <p>Given another module $N$, now construct $\mathrm{Hom}(F,N)$:
+                        </p>
+                        <p class="segment">
+                            <small>
+                            \[
+                            \mathrm{Hom}(F,N) \colon \ldots \leftarrow \mathrm{Hom}(F_{-2},N) \xleftarrow{\partial_{-2}}  \mathrm{Hom}(F_{-1},N) \xleftarrow{\partial_{-1}} \mathrm{Hom}(F_0,N) \xleftarrow{\partial_0} 0
+                            \]
+                        </small>
+                        where $\partial(f) = f \circ d$
+                        </p>
+                        <p class="fragment">This is still a complex! That is, we still have \[ \partial \circ \partial = 0. \]</p>
+                        <p class="fragment">BUT while $F$ had almost no homologies, this new complex may have!</p>
+                    </section>
+                    <section>
+                        <p>Almost no homologies:
+                            \[
+                            F \colon \ldots \to F_{-2} \xrightarrow{d_{-2}}  F_{-1} \xrightarrow{d_{-1}} F_0 \xrightarrow{d_0} 0
+                            \]
+                        </p>
+                        <p class="fragment">
+                            May have homologies: <small>
+                            \[
+                            \mathrm{Hom}(F,N) \colon \ldots \leftarrow \mathrm{Hom}(F_{-2},N) \xleftarrow{\partial_{-2}}  \mathrm{Hom}(F_{-1},N) \xleftarrow{\partial_{-1}} \mathrm{Hom}(F_0,N) \xleftarrow{\partial_0} 0
+                            \]
+                        </small>
+                        </p>
+                        <p class="fragment">Let's call the $n$th homology of this $\mathrm{Ext}^n(V,N)$. </p>
+                    </section>
+                    <section>
+                        <h3>Examples</h3>
+                        <p class="fragment"><b>$R$ is a field:</b> $\mathrm{Ext}^n(M,N) = 0$ for all $n > 0$.  </p>
+                        <p class="fragment"><b>$R= \mathbb{C}[x]$:</b> $\mathrm{Ext}^n(M,N)=0$ for all $n >1$.</p>
+                        <p class="fragment"><b>$R= \mathbb{C}[x,y]$:</b> $\mathrm{Ext}^n(M,N)=0$ for all $n >2$.</p>
+                        <p class="fragment" class="r-fit-text"><b>$R= \mathbb{C}[x_1, \ldots, x_m]$:</b> $\mathrm{Ext}^n(M,N)=0$ for all $n >m$.</p>
+                        <p class="fragment">These are for ALL modules $M,N$.</p>
+                    </section>
+                    <section>
+                        <h3>Singularities</h3>
+                        <p>Is it always true that there exists a threshold $m$ such that for all $n>m$ we have $\mathrm{Ext}^n(M,N) = 0$?</p>
+                        <p class="fragment">The answer is yes if the "geometric object corresponding to your ring" is "smooth", the answer is no if it has "singularities".</p>
+                    </section>
+                    <section>
+                        <h3>What did I do in my thesis?</h3>
+                        <p>I studied the ring elements which "see" all the "large enough" Exts as zero. That is, I studied ring elements which uniformly annihilate $\mathrm{Ext}^n(M,N)$ for large $n$ and for all $M,N$. <span class="fragment">Not so surprisingly, they form an ideal and the vanishing locus of this ideal is the singular locus of the corresponding geometric object.</span><span class="fragment"> They can be useful tools to study different properties of your rings.</span>
+                        </p>
+                    </section>
+				</section>
+                <section>
+                    <h1>Thank you.</h1>
+                </section>
+
+
+			</div>
+
+		</div>
+
+		<script src="../../reveal.js-master/dist/reveal.js"></script>
+		<script src="../../reveal.js-master/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+	</body>
+</html>

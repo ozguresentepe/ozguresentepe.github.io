@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bielefeld talk June 2023</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/theme/night.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section data-background-color="aquamarine">
+					<h2>Cohen-Macaulay Dominant Dimension</h2>
+					<p class="r-fit-text">Ozgur Esentepe - University of Leeds<br> Workshop on Finitistic Dimensions - Bielefeld - June 15, 2023
+                    </p>
+				</section>
+
+				<section>
+                    <section>
+                        <h2>We live in a world of homological conjectures.</h2>
+                        <p>Let's see some of them in the setting of finite dimensional algebras. Throughout, let $A$ be a finite dimensional algebra.</p>                            
+                    </section>
+                    <section data-background-color="white">
+                        <h3>Finitistic dimension conjecture</h3>
+                        <p>The reason why we are here: it states that
+                            \[
+                            \mathrm{findim}(A) := \{\mathrm{pd}(M) \colon M \in \mathrm{mod } A, \mathrm{pd}(M) < \infty \}
+                            \]
+                            is always finite.</p>
+                    </section>
+                    <section data-background-color="white">
+                        <h3>The vanishing conjecture</h3>
+                        <p>Consider $K^b(\mathrm{inj}(I))$ as a full subcategory of $D^b(A)$. For a complex $X \in D^b(A)$, if we have $\mathrm{Hom}_{D^b(A)}(I,X) =0$ for every $I \in K^b(\mathrm{inj}(I))$, then $X = 0$. </p>    
+                    </section>
+					<section data-background-color="white">
+						<h3>Nunke's condition</h3>
+						<p>If $X$ is a nonzero $A$-module, then there is an $i \ge 0$ such that $\mathrm{Ext}_A^i(DA,X) \neq 0$.</p> 
+					</section>
+					<section data-background-color="white">
+						<h3>Generalized Nakayama conjecture</h3>
+						<p>If $S$ is a simple $A$-module, then there is an $i \ge 0$ such that $\mathrm{Ext}_A^i(DA, S) \neq 0$.</p>	
+					</section>
+					<section data-background-color="white">
+						<h3>Auslander-Reiten conjecture</h3>
+						<p>If $M$ is a generator in $\mathrm{mod} A$ and $\mathrm{Ext}_A^i(M,M) =0$ for any $i > 0$, then $M$ is projective. </p>
+					</section>
+					<section data-background-color="white">
+						<h3>Nakayama conjecture</h3>
+						<p>Let $ 0 \to A \to I^0 \to I^1 \to \dots$ be the minimal injective resolution of $A$. If the dominant dimension
+						\[
+						\mathrm{domdim} A := \inf\{n \colon I^n \text{ is not projective.}\}
+						\]
+						is not finite, then $A$ is self-injective.
+					</p>
+					</section>
+					<section data-background-color="white">
+						<p>
+							We have implications
+							\[
+							\begin{align} 
+							\mathrm{FDC} \implies \mathrm{VC}  \implies \mathrm{NuC} \implies \mathrm{GNC} \implies \mathrm{NC}
+							\end{align}
+							\]
+						</p>
+						<p>
+							<ul>
+								<li class="fragment"> If we can prove the finitistic dimension conjecture, then we have a proof for all the other conjectures.
+									<li class="fragment"> If we can find a counterexample to the Nakayama conjecture, then we have a counterexample for all the other conjectures.
+							</ul>
+						</p>
+					</section>
+				</section>
+
+				<section data-background-color="rgb(230, 182, 28)">
+					<h2>Today's Goal</h2>
+					<p>
+						The main goal is to tell you the story where I thought I found a counterexample to the Nakayama conjecture.<div class="fragment">In order to do this, I am going to introduce the framework I work in and define Cohen-Macaulay dominant dimension.</div>
+					</p>
+				</section>
+
+				<section>
+					<section data-background-color="pink">
+						<h2>I am a commutative algebraist.</h2>
+					<p>Therefore, we will start with some commutative algebra definitions.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Depth</h3>
+						<p>
+							Given a local ring $(R, \mathfrak{m})$ and a finitely generated $R$-module $M$. The <i>depth</i> of $M$ is 
+							\[
+							\mathrm{depth}(M) = \inf\{i \colon \mathrm{Ext}_R^i(R/\mathfrak{m},M) \neq 0 \}.
+							\]
+						</p>
+						<p class="fragment"> The <i>dimension</i> of $M$, $\mathrm{dim}(M)$, is the Krull dimension of the quotient ring $R/\mathrm{ann}_R(M)$.</p>
+						<p class="fragment">We have inequalities
+							\[\mathrm{depth}(M) \leq \mathrm{dim}(M) \leq \mathrm{dim} R. \]
+						</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Cohen-Macaulayness</h3>
+						<p class="fragment shrink">We have inequalities
+							\[\mathrm{depth}(M) \leq \mathrm{dim}(M) \leq \mathrm{dim} R. \]
+						</p>
+						<p class="fragment fade-up">We say that $R$ is a <i>Cohen-Macaulay ring</i> if $\mathrm{depth} R = \dim R$ and $M$ is a <i>maximal Cohen-Macaulay module</i> if $\mathrm{depth} M = \dim R$. We denote the category of MCM modules by $\mathrm{CM}(R)$.</p>
+						<p class="fragment">From now on, we will assume that $R$ is a CM local ring of dimension $d < \infty$ with maximal ideal $\mathfrak{m}$ unless otherwise stated.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Canonical module</h3>
+						<p>We say that a finitely generated $R$-module $\omega_R$ is a (the) <i>canonical module</i> if</p>
+						<ul>
+							<li class="fragment">it is maximal Cohen-Macaulay,
+							<li class="fragment">it has finite injective dimension,
+							<li class="fragment">it satisfies $\mathrm{Ext}^d_R(R/\mathfrak{m}, \omega_R) \cong R/\mathfrak{m}$.
+						</ul>
+						<p class="fragment fade-in-then-out">We have $\mathrm{Ext}_R^1(-,\omega_R) = 0$ on $\mathrm{CM}(R)$.</p>
+						<p class="fragment fade-in-then-out">We have an exact duality $D:=\mathrm{Hom}_R(-,\omega_R): \mathrm{CM}(R) \leftrightarrow \mathrm{CM}(R)$.</p>
+						<p class="fragment fade-in-then-out">We say that $R$ is a Gorenstein ring if $\omega_R \cong R$.</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="rgb(33, 184, 204)">
+						<h2>Time to get noncommutative</h2>
+					</section>
+					<section data-background-color="white">
+						<h3>Depth</h3>
+						<p>
+							Let $R$ be a commutative Noetherian local ring, $\Lambda$ be a module-finite $R$-algebra with Jacobson radical $J$ and $M$ a finitely generated right $\Lambda$-module. Then,
+						<div class="fragment">
+							\[
+							\begin{align} 
+							\mathrm{depth} (M) & = \inf\{ i \colon \mathrm{Ext}_R^i(R/\mathfrak{m},M) \neq 0 \} \\
+							&= \inf\{ i \colon \mathrm{Ext}_\Lambda^i(\Lambda/J,M) \neq 0 \}
+							\end{align}
+							 \]
+						</div>
+						<div class="fragment">The second line does not depend on $R$.</div>
+						<div class="fragment">It turns out that the dimension does not depend on $R$ either.</div>
+						</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Cohen-Macaulayness</h3>
+						<p>
+							<div class="fragment shrink">We say that a right $\Lambda$-module $M$ is a Cohen-Macaulay $\Lambda$-module if $M \in \mathrm{CM}(R)$.
+							</div>
+							<div class="fragment"> <div class="fragment shrink">We denote the category of CM $\Lambda$-modules by $\mathrm{CM}(\Lambda)$.</div> </div>
+							<div class="fragment"> <div class="fragment shrink">The category $\mathrm{CM}(\Lambda)$ does not depend on $R$.</div></div>
+							<div class="fragment"> <div class="fragment shrink">We say that $\Lambda$ is an $R$-<i>order</i> if $\Lambda \in \mathrm{CM}(\Lambda)$.</div></div>
+						</p>						
+					</section>
+					<section data-background-color="white">
+						<h3>Canonical module</h3>
+						<p><div class="fragment shrink">When $R$ is a CM local ring, the functor $D=\mathrm{Hom}_R(-,\omega_R)$ again gives an exact duality $\mathrm{CM}(\Lambda) \leftrightarrow \mathrm{CM}(\Lambda^{\mathrm{op}})$.</div>
+							<div class="fragment">
+							<div class="fragment shrink">We denote by $\omega=\omega_\Lambda$ the bimodule $D\Lambda$ and call it the canonical module of $\Lambda$.</div></div>
+							<div class="fragment"><div class="fragment shrink"> We have $\mathrm{Hom}_R(-,\omega_R) \cong \mathrm{Hom}_\Lambda(-,\omega)$ and $\omega$ is an additive generator for injective objects in $\mathrm{CM}(\Lambda)$.</div> </div>
+						</p>
+					</section>	
+				</section>
+				
+				<section>
+					<section data-background-color="orange">
+						<h2>Cohen-Macaulay injectives</h2>
+						Let's let $\Lambda$ be an $R$-order.
+					</section>
+					<section data-background-color="white">
+						<h3>CM-injective resolutions</h3>
+						<p>Let $M$ be Cohen-Macaulay $\Lambda$-module. By dualizing a (minimal) projective resolution of the $\Lambda^{\mathrm{op}}$-module $DM$, we can obtain a CM-injective resolution of $M$ - an injective resolution in $\mathrm{CM}(\Lambda)$. 
+							<div class="fragment">This way, we can make sense of CM-injective dimension of modules in $\mathrm{CM}(\Lambda)$.</div>
+						</p>
+						<p class="fragment"><b>Example:</b> If $Q$ is an acyclic quiver and $R$ is a Cohen-Macaulay local ring, then the CM-injective dimension of $\Lambda = RQ$ is 1.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Auslander-Buchsbaum</h3>
+						<p>
+							If the CM-injective dimension of $\Lambda$ is $n$, then for any finitely generated $\Lambda$-module $M$ with finite projective dimension, we have
+							\[
+								d \leq \mathrm{pd}_\Lambda (M) + \mathrm{depth} (M) \leq n + d.
+							\]
+							<div class="fragment"><div class="fragment shrink">See Joshua Stangle's PhD thesis (2017).</div> </div>
+							<div class="fragment">Hence, if $\Lambda$ is an order with finite CM-injective dimension, the "CM"-finitistic dimension conjecture holds.</div>
+						</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Gorenstein orders</h3>
+						<p>We say that $\Lambda$ is a <i>Gorenstein order</i> if its CM-injective dimension is 0. This is equivalent to saying that $\omega$ is a projective module (both as a $\Lambda$ and $\Lambda^{\mathrm{op}}$-module).
+						<div class="fragment">A Gorenstein order is <i>non-singular</i> if it has finite global dimension.</div>
+						</p>
+					</section>
+					<section>
+						<h3>A geometric situation</h3>
+						<p>Suppose that $f: Y \to \mathrm{spec }R$ is a projective birational map where $Y$ and $R$ are both normal and Gorenstein of dimension $d$. Suppose that there is a (noncommutative) ring $\Lambda$ such that $D^b(Y) \cong D^b(\Lambda)$. Then, we have $f$ is crepant if and only if $\Lambda$ is an $R$-order. If $\Lambda$ has finite global dimension, then it is a non-singular order (a noncommutative crepant resolution (vdB)).
+						</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="green">
+						<h2>Cohen-Macaulay dominant dimension</h2>
+						<p class="fragment">Everything (almost always) works the same.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Definition</h3>
+						<p>Let $ 0 \to \Lambda \to I^0 \to I^1 \to \dots$ be a minimal CM-injective resolution of $\Lambda$. Then, the CM-dominant dimension of $\Lambda$ is defined as
+							\[
+							\mathrm{CMdomdim}(\Lambda) := \inf\{n \colon I^n \text{ is not projective.}.\}
+							\]
+							<div class="fragment">It measures how far away from being Gorenstein the order $\Lambda$ is.</div>
+						</p>
+					</section>
+
+					<section data-background-color="white">
+						<h3>A noncommutative phenomenon</h3>
+						<p>This invariant, when applied to commutative rings, is not very interesting.
+							<div class="fragment">If $R$ is a commutative Gorenstein local ring, then its CM-dominant dimension is infinite.</div>
+							<div class="fragment">If $R$ is a commutative CM local ring which is not Gorenstein, then its CM-dominant dimension is 0.</div>
+						</p>
+					</section>
+
+					<section data-background-color="white">
+						<h3>Iyama's Auslander-type conditions</h3>
+						<p>In his seminal work on ``Auslander correspondence", Iyama considers $(m,n)$-conditions. He covers the case where the base ring is a regular local ring. In his language, the CM dominant dimension of an order is at least $\ell$ if and only if the order satisfies the $(d+1, d+\ell)$-condition.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>Regular sequences</h3>
+						<p><div class="fragment shrink"> If $\mathbf{x}$ is a regular sequence on $\Lambda$, then we have 
+							\[\mathrm{CMdomdim}(\Lambda) = \mathrm{CMdomdim} (\Lambda/\mathbf{x}\Lambda). \]</div>
+						<div class="r-fit-text"><div class="fragment"> <div class="fragment shrink"> Therefore, if the length of $\mathbf{x}$ is $d$, we reduce to the case of ordinary dominant dimension.  </div></div></div>
+						<div class="r-fit-text"><div class="fragment"><div class="fragment shrink"> This means that if you can find a counterexample to the "CM-Nakayama conjecture", then you get a counterexample to the original Nakayama conjecture.</div></div></div>
+						<div class="fragment">Hence, you can look for counterexamples to the finitistic dimension conjecture by looking for counterexamples to the CM-Nakayama conjecture.</div>
+						</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="purple">
+						<h2>A failed attempt</h2>
+						<p class="fragment">I thought I had a counterexample.</p>
+					</section>
+					<section data-background-color="white">
+						<h3>The complete (2,1)-scroll</h3>
+						<p><small>
+							<div class="fragment shrink">
+								Let $k$ be an infinite field and let $R = k[[x,y,z,u,v]]/I$ where $I$ is the ideal generated by the $2 \times 2$ minors of the matrix
+								\[
+								\begin{bmatrix} 	
+									x & y & u \\
+									y & z & v
+								\end{bmatrix}.
+								\]</div></small><small>
+								<div class="r-fit-text"><div class="fragment"><div class="fragment shrink"><tiny>Then, $R$ is a CM local ring of dimension 3.</tiny></div></div> </div></small>
+								<div class="fragment"> <div class="fragment shrink">The endomorphism ring $\Lambda = \mathrm{End}_R(R \oplus \omega_R)$ is an order of global dimension 4 and thus CM-injective dimension 1.</div> </div> 
+								<div class="fragment">Therefore, $\mathrm{CMdomdim} \Lambda$ is 0, 1 or infinite. <small>Note that $\Lambda$ is not a Gorenstein order.</small></div>
+						</p>
+					</section>
+					<section data-background-color="white">
+						<h3>I should have known.</h3>
+						<p>Since $\Lambda$ has finite CM-injective dimension, by the Auslander-Buchsbaum type of inequality, the CM-finitistic dimension conjecture holds and therefore the CM-Nakayama conjecture should hold. Therefore, it is clear that $\Lambda$ does not have infinite CM-dominant dimension.</p>
+						<p class="fragment">But I did not know. So, I considered the following arguments.</p>
+						<p class="fragment">There is one (and only one) mistake in the slides with red background.</p>
+					</section>
+					<section data-background-color="red">
+						<p class="r-fit-text">
+							Let $R$ be any CM local ring and $M$ be an MCM $R$-module which has $R$ and $\omega_R$ as a direct summand. Consider $DM$ and a projective resolution $\mathbb{P}$ of $DM$ and dualize it to get a CM-injective resolution $D\mathbb{P}$ of $M$. Then, apply the functor $\mathrm{Hom}_R(M,-)$ to it. We have a complex
+							\[ 
+							0 \to \Gamma = \mathrm{End}_R(M) \to \mathrm{Hom}_R(M,\omega_R)^{n_0} \to \mathrm{Hom}_R(M,\omega_R)^{n_1} \to \ldots
+							\]
+							which may or may not have cohomology. In fact, the cohomology of this is isomorphic to $\mathrm{Ext}^*_R(M,M)$.
+							<div class="r-fit-text"> <div class="fragment">We have that $\Gamma$ is an $R$-order if and only if $\mathrm{Ext}_R^{i}(M,M)=0$ for $i = 1, \ldots, d-2$.</div> </div><br><br>
+							<small><div class="fragment">Now, let us focus on $\mathrm{Hom}_R(M,\omega_R)$.</div></small>
+						</p>
+					</section>
+					<section data-background-color="red">
+						<p class="r-fit-text">
+							Since we assume that $M$ contains $R$ as a direct summand, we have that $M_\Gamma$ is a direct summand of $\Gamma_\Gamma$. Indeed, if we have $M = R\oplus M'$, then we have $\Gamma_\Gamma = \mathrm{Hom}_R(_R M, _R M_\Gamma) = \mathrm{Hom}_R(_R R \oplus _R M', _R M_\Gamma) = M_\Gamma \oplus \mathrm{Hom}_R(M',M)$. So, $\mathrm{Hom}_R(M,\omega_R)$ is a CM-injective $\Gamma$-module.
+							<small><div class="fragment">Similarly, since $R$ is assumed to contain $\omega_R$ as a direct summand, we can show that $\mathrm{Hom}_R(M,\omega_R)$ is a projective $\Gamma$-module.</small>
+							<div class="fragment">So, we have that $\mathrm{Hom}_R(M,\omega_R)$ is a CM-projective-injective module.</div>
+						</p>
+					</section>
+					<section data-background-color="red">
+						<p><small>
+							So, we have $\color{black}{0 \to \Gamma \to \mathrm{Hom}_R(M,\omega_R)^{n_0} \to \mathrm{Hom}_R(M,\omega_R)^{n_1}} \to \mathrm{Hom}_R(M,\omega_R)^{n_2} \to \ldots $ where the terms are CM-projective-injective $\Gamma$-modules. The black portion is always exact by the half-exactness of $\mathrm{Hom}_R(M,-)$ and we may get more exactness by Ext vanishing.
+							<div class="fragment">Now, say, we have exactness until $\mathrm{Hom}_R(M,\omega_R)^{n_m}$. Then, after that point, we don't have exactness. BUT.. we can just complete that part to a CM-injective resolution!</div>
+							<div class="fragment">Therefore, if $M$ is an MCM-module that contains $R$ and $\omega_R$ as a direct summand, then the CM-dominant dimension of $\Gamma=\mathrm{End}_R(M)$ is at least 2 and the vanishing of self extensions of $M$ tells us how high the CM-dominant dimension can get.</div>
+						</small>
+						</p>	
+					</section>
+					<section data-background-color="white">
+						<h3>Were you able to find the mistake?</h3>
+						<p>I sent my "finding" to people.
+							<div class="r-fit-text">
+							<div class="fragment"> <div class="fragment shrink">Graham Leushcke said "I too am confused. It is not a fun feeling." </div> </div>
+							<div class="fragment"> <div class="fragment shrink"> He also said "It seems like this is a question the <b>normal</b> representation theory people should know the answer to."</div> </div> 
+							<div class="fragment"> <div class="fragment shrink"> And finally, on December 1st, 2021 at 14:51, after I told him the response I received from Osamu Iyama, he said:</div> </div>
+						</div>
+							<div class="fragment">  Aha! Well, thank heaven for Osamu.</div>
+							<small><div class="fragment">The mistake is that unless the cokernel of $\mathrm{Hom}_R(M, \omega_R)^{n_t} \to \mathrm{Hom}_R(M, \omega_R)^{n_{t+1}}$ is MCM, we can not complete our complex into a CM-injective resolution.</div></small>
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Thank you</h1>
+					</section>
+					<section>
+						<p><b>Question:</b> Do you need to assume that "minimal" CM-injective resolutions exist?</p>
+						<p><b>Answer:</b> Yes, I forgot to add the semi-perfect assumption on $\Lambda$ when I was making the slides. You can guarantee this by assuming that $R$ is complete, for example.</p>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="../../reveal.js-master/dist/reveal.js"></script>
+		<script src="../../reveal.js-master/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ozgur's Database of Friends</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">  
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1 {font-family: "Poppins", sans-serif}
+h1 {letter-spacing: 2px}
+  .w3-row-padding img {margin-bottom: 12px} a {color: orange}
+</style>
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity" style="padding:16px 16px">
+    <h1>OZDOFF</h1>
+  <h1 class="w3-xlarge">Ozgur's Database of Friends -- TEST</h1>
+</header>
+
+  
+<div class="w3-container"> 
+   <h4 align="center">About</h4>
+	In the Summer of 2022, I saw a tweet which said "If you're an academic without a website, you don't exist." It upset me. So, I made this small thing to list personal academic webpages of my friends in order to make sure that they are alive. You can submit your answers by filling <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSwYbsru_UNV8DUOZ9Vao63kAgMPssPBkEpH-4MFS3mSTXOQ/viewform">this google form.</a> -- If we are not really friends, you can <a href="https://www.buymeacoffee.com/ozguresentepe">buy me a coffee</a> and just write "I once bought you a coffee" as an answer to how we know each other in the google form. -- If you do not have a personal webpage, I made <a href="https://www.myacademic.page">this thing</a> which you may use to create a simple one. -- I shuffle the list every couple days. -- I was inspired by <a href="https://www.commalg.org/people/">commalg</a>.
+  </div>
+
+
+
+<h4 align="center">My friends</h4>
+    <ul class="w3-ol" reversed>
+        <div class="w3-container" id="papers"> 
+</div>
+
+  </ul>
+
+</div>
+
+</body>
+  
+  <script>
+  // put your code here.
+    const url = "https://docs.google.com/spreadsheets/d/1mGo3TjOvis8L-JeSAiRY3NB1-JRjGkpIVXumIUxzd08/export?format=csv";
+    const papers = document.querySelector("#papers");
+    fetch(url).then(result=>result.text()).then(function(csvtext){
+        return csv().fromString(csvtext);
+    }).then(function(csv){
+        //main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+        csv.forEach(function(row){
+          	papers.innerHTML +=  "<li><strong>" + row.name +".</strong> "+ row.jobdescription + " at " + row.institution + ". <strong>" + row.researchinterests + ".</strong> <a href='" + row.webpage + "'>" + row.webpage + "</a> - " + row.howdoweknow  ; 
+
+        });
+        }
+        ) 
+  </script>
+  
+</html>

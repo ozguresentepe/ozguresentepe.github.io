@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Özgür'ün Blogu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="header">
+    <h3><a href="https://www.sntp.ca">Sntp Home</a> | <a href="https://www.sntp.ca/blog">Blog Home</a> | <a href="https://www.buymeacoffee.com/ozguresentepe">Buy me a coffee</a></h3>
+    <h1 class="w3-jumbo"><b>Özgür'ün Blogu.</b></h1>
+    <h1 class="w3-xxxlarge w3-text"><b>Why do we denote the square root of $-1$ by $i$?</b></h1>
+    <hr style="width:50px;border:5px solid" class="w3-round">
+  </div>
+
+  <!-- About -->
+  <div class="w3-container" id="content" style="margin-top:7px">
+    <h2>Dedication</h2>
+
+    <p>Since this is my first blog post, I will dedicate this one to my mother Elif Günçe. She is an expert in Forensic Dentistry and also in Humanitarian Forensics. She had me in her third year of undergrad and I was in high school when she got her PhD. Whatever/wherever I am right now, I owe it to her. She moved us to Canada back in 2011 and she is the reason why I was able to apply for graduate school in Canada as a permanent resident/domestic student. She always believed in me and claimed I could have been accepted to any school I wanted. But as Almut Burchard once said to her: <i>"If he wasn't a domestic applicant, I wouldn't be able to accept in the (graduate) program (in the Department of Mathematics at the University of Toronto)."</i> </p>
+    <p>My mother once visited me in Toronto in Fall 2017. I was teaching Linear Algebra II during that semester. She watched me in the big hall where I lectured over 100 students. If you know me, I am a vertically challenged person. She is even smaller than me. So, she was lost in between the students. It was cute. It was the middle of the semester and I had finished teaching basic concepts of linear algebra in the context of abstract vector spaces over real numbers and before we moved to eigenvalues/Jordan form etc I was supposed to introduce complex numbers.</p>
+
+    <p>In this blog post, I am going to recall that introduction to complex numbers and I will also tell you why we denote the complex numbers by $a + bi$ with $a,b$ real numbers. In particular, why do we use the letter $i$? If you believe that you are familiar with complex numbers, skip to the end for the answer.</p>
+
+    <h2>Introduction</h2>
+    <p><i>You should read this as I am teaching in front of the classroom.</i></p>
+
+    <p>We start learning about numbers when we are children with the set of natural numbers: $0,1,2,3$ … On this set of numbers, we have algebraic operations which we call addition and multiplication and these operations satisfy some nice natural properties. We would like to solve equations - for reasons - and by staying inside the universe of natural numbers we can solve some equations. For example, we can solve $x + 2 = 5$. We know that $x=3$ is a solution to this equation. However, there are equations we can not solve! We can not solve the equation $x + 1 = 0$ for example.</p>
+
+    <p>Now, you know that $-1$ is a solution to this equation but it does not live in the set of natural numbers. If you started with natural numbers, you manually have to add this number inside your set if you would like to be able to solve this equation. So, now you have a new set:  $-1, 0, 1, 2, 3$ … which has the power of solving the equation $x+1=0$. However, we lost the structure. We can not do the operation $(-1)+(-1)$ in this new set, for example. What do we do? We complete this set by adding all possible results of every operation we can perform. We end up with the set of integers. I want to emphasize that we <i>named</i> this new number $-1$ that we added to our new set. It was us who gave it a symbol. We are just very familiar with this concept after years of education that we know it is called negative one and it is denoted by $-1$.</p>
+
+    <p>
+    Integers are cool and we can solve a lot of equations such as $x + n = 0$ where $n$ is an integer. But when we see an equation like $2x - 1 = 0$, we can not solve it. We imagine that there is a solution and we give it a name. We can call it Mauro but we don't because we are familiar with this number since the grade school. So, we call it $1/2$. Now, we play the same game. Once we add this number, our set of numbers has gained the power of solving this equation which it previously couldn't. But we gave up the power of nice algebraic structure. So, what do we do? We play the same game and add other numbers that we have to add in order to keep our structure. For example, $3/2, 5/2, 1/4, 3/8$ … We can now solve other equations like $4x - 7 = 0$. But we fail to solve $3x - 1 = 0$.
+    </p>
+
+    <p>
+    But now we know the name of the game. Make up a solution, give it a name, add it to your set and then close the set under your operations. When you do this for all equations of the form $ax -b = 0$ where $a$ and $b$ are integers, you get all numbers of the form $b/a$. So, we have now created the set of rational numbers. Any questions or comments here? What? Oh. Yes. We have to make sure that $a$ is not zero. I was testing you! I did not forget that, of course (!).
+    </p>
+
+    <p>
+    Now, let us make a more complicated example which you did not see in elementary school. While we have the power of solving all linear equations with rational coefficients now, we can not solve the equation $x^2 - 2 = 0$. We have two options: be sad, get upset, leave math or continue playing the game we have been playing: Let's say it has one solution, we give it a name. Let's name it after one of you. What is your name again? (*I point at a person sitting in the back) Samantha. Samantha, we will name this new number after you. Okay, let's call this new number $s$. This number $s$ has the property that $s^2 - 2 =0$. You are familiar with this number because you know for a long time that there is a number we call $\sqrt{2}$. See, I have a tattoo of it. But today, we are calling it Samantha's number and we will denote it by $s$. We will now add this new number to our set of rational numbers and we will close it under our operations so that we can keep our algebraic structure. We have numbers like $1 + s$ and $2 + 3s$. And we add them in the obvious way and get $3 + 4s$. We can also multiply them because we know from the distributive property of our structure that $(1+s)(2+3s) = 2 + 3s+ 2s+ 3s^2$ and by the defining property of Samantha's number, we must have $s^2= 2$ so this product equals $8+5s$. The rules of the game tell you what to do and how to define everything once you add Samantha's number to your set.   
+    </p>
+
+
+    <h2>Conclusion</h2>
+    <p><i>Keep reading this as I am teaching in front of the classroom.</i></p>
+
+    <p>
+    Let's recap. We started with natural numbers, couldn't solve some equations and created integers. We were able to solve more equations but not all. We created rational numbers. Then, we do some shady things here (aka calculus) and construct real numbers, don't worry about this. Can we solve all polynomial equations now? No? An example? Yes, you are right we can not solve $x^2 + 1 = 0$. This equation does not have a solution in our set of real numbers. So, again we can just give up and call it a day and say I am going to live in a world where this equation does not have a solution and be happy. Or we can play the game again. Imagine that there is a solution, give it a name. Excuse me, you, yes, the lady with the blue scarf (pointing at my mom), we will name it after you, can you please tell us, let's see … , the third letter of your first name.
+    </p>
+    <p>And this is why we denote the square root of $-1$ by $i$.</p>
+  </div>
+
+  <div class="w3-container" style="margin-top:10px" id="end-of-post">
+    <hr style="width:50px;border:2px solid" class="w3-round">
+    <p>Go back to the <a href="#header">top of this page</a> to return to Blog Home and buy me a coffee if you enjoyed this post.</p>
+  </div>
+
+   
+    
+      
+
+</div>        
+
+
+</div>
+
+</body>
+</html>
+

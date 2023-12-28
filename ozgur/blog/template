@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Özgür'ün Blogu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</head>
+
+
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="header">
+      <h3><a href="https://www.sntp.ca">Sntp Home</a> | <a href="https://www.sntp.ca/ozgur/blog">Blog Home</a> | <a href="https://www.buymeacoffee.com/ozguresentepe">Buy me a coffee</a></h3>
+      <h1 class="w3-jumbo"><b>Özgür'ün Blogu.</b></h1>
+      <h1 class="w3-xxxlarge w3-text"><b>Title of the blog post.</b></h1>
+      <hr style="width:50px;border:5px solid" class="w3-round">
+    </div>
+  
+    <!-- About -->
+    <div class="w3-container" id="content" style="margin-top:7px">
+      <h2>Heading</h2>
+
+      <p>Content.</p>
+    </div>
+  
+     
+     
+  <div class="w3-container" style="margin-top:10px" id="end-of-post">
+    <hr style="width:50px;border:2px solid" class="w3-round">
+    <p>Go back to the <a href="#header">top of this page</a> to return to Blog Home and buy me a coffee if you enjoyed this post.</p>
+  </div>
+ 
+        
+  
+  </div>        
+  
+</body>
+</html>

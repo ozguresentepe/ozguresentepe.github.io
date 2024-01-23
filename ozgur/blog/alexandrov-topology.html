@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Özgür'ün Blogu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="icon" type="image/x-icon" href="umlaut.png">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</head>
+
+
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="header">
+      <h3><a href="https://www.sntp.ca">Sntp Home</a> | <a href="https://www.sntp.ca/ozgur/blog">Blog Home</a> | <a href="https://www.buymeacoffee.com/ozguresentepe">Buy me a coffee</a></h3>
+      <h1 class="w3-jumbo"><b>Özgür'ün Blogu.</b></h1>
+      <h1 class="w3-xxxlarge w3-text"><b>An Alexandrov topology for maximal Cohen-Macaulay modules.</b></h1>
+      <hr style="width:50px;border:5px solid" class="w3-round">
+    </div>
+  
+    <!-- About -->
+    <div class="w3-container" id="content" style="margin-top:7px">
+        January 22, 2024.
+
+      <h2>Introduction</h2>
+        <p>
+            The following is a translated and slightly edited version of <a href="https://twitter.com/ozguresentepe/status/1653776266057711619">  these tweets</a> in Turkish.
+        </p>
+        <p>
+            I would like to share three good and two bad news but first a little bit of preliminaries: Back in 2021, as a group of young mathematicians we organized a program for undergraduate students in Istanbul Center Mathematical Sciences. I also gave a mini-lecture in this program. In the last part of my last lecture, I talked about a research problem that I wanted to explore. At the end of the lecture, three people (2 from Bogazici and 1 from Bilgi) approached me and told me that they found the problem very interesting. We chatted a little bit enjoying the beautiful view of ICMS. 
+        </p>
+        <p>
+            After the program, I returned back to England. We started to have online meetings with the three students. Some days we talked about some background material, other days we learned about computational algebra tools and other times we tried to come up with some new ideas on the research problem. Last fall (that would be 2022) we wrote up our discussions and uploaded on Arxiv and sent to Journal of Pure and Applied Algebra. The first good news is that the paper is accepted to be published.
+        </p>
+        <p>
+            The second good news is that all three students are going to PhD programs around the United States, fully funded. I hope that their experiences meet their expectations. 
+        </p>
+        <p>
+            The third good news is that when I met with these students, we did not have a budget and I was not able to pay them but TUBITAK offers some funding if your paper is published in a journal at the level of JPAA. So, at least they will be able to apply for this funding and cover some of the fees for their PhD applications. 
+        </p>
+        <p>
+            These were good news. Now, the bad news. The first one is not really new. Thanks to Naci Inci, the current rector of Bogazici University appointed by Erdogan, the beautiful building of ICMS does not exist anymore. It was a beautiful place to do mathematics with a beautiful view. Unfortunate.
+        </p>
+        <p>
+            The second bad news is that one of the 10 instructors we had in the program, Mohan Ravichandran, had his work permit cancelled in the middle of the semester. He only learned about this when he realized his staff ID stopped working. I don't know what will happen to his class that he was teaching and also the TUBITAK grant he had with which he hired a postdoc. What will happen to the postdoc?
+        </p>
+
+    <h2>The introduction of our paper</h2>
+
+    <p>Below, I copy a part of the introduction to our paper. 
+    </p>
+    <hr style="border:1px solid" class="w3-round">
+    <p>
+
+Recently, <a href="https://www.ams.org/journals/proc/2020-148-06/S0002-9939-2020-14965-9/">Hiramatsu and Takahashi</a>  introduced a topology on the set of isomorphism classes of maximal Cohen-Macaulay modules over a Cohen-Macaulay local ring. Their method utilizes the concept of degeneration to define a closure operator with the purpose of studying the set $\mathrm{E}(d)$ of isomorphism classes of maximal Cohen-Macaulay modules of multiplicity $d$ as a substitute for the module variety $\mathrm{M}(d)$ of $d$-dimensional modules over a finite dimensional algebra.
+<br><br>
+In the present paper, we introduce a new family of topologies on the set of isomorphism classes of maximal Cohen-Macaulay modules over a Gorenstein ring using the theory of cohomology annihilators. The main idea is as follows. We first consider the set of all ideals which appear as the annihilator of the stable endomorphism ring of a maximal Cohen-Macaulay module. Then, we put a preorder on this set and consider a topology associated with this preorder. 
+<br><br>
+Our purpose is to try to better understand the support of Tate cohomology over Gorenstein rings. Let us be more precise and explain our motivation for this project. Hilbert's Syzygy Theorem says that the $d$th syzygy module of a finitely generated module over a polynomial ring $S$ in $d$ variables is a free module. This can be stated, using Ext-modules, in fancier terms as $\mathrm{Ext}_S^{d+1}(M,N) = 0$ for any finitely generated $S$-modules $M$ and $N$. This version also holds true for any ring of global dimension at most $d$. When a ring has infinite global dimension on the other hand, we see that for every $i > 0$, there is a pair of finitely generated modules $M,N$ such that $\mathrm{Ext}^i(M,N)$ is nonzero. Hence, it makes sense to study the annihilators of these nonzero Ext-modules. Particularly, for a commutative Noetherian ring $R$, it is useful to study the <i>cohomology annihilator ideal</i>
+\begin{align*}
+    \mathrm{ca}(R) = \{ r \in R \colon r \mathrm{Ext}^i_R(M,N) = 0 \text{ for all } M,N \in \mathrm{mod} R \text{ and } i \gg 0\}
+\end{align*}
+consisting of uniform annihilators of all Ext-modules of finitely generated modules. When the ring is a Gorenstein local ring, this ideal coincides with the set of those ring elements which annihilate the stable endomorphism ring of every maximal Cohen-Macaulay module or equivalently, which annihilate all Hom-sets in the singularity category.
+<br><br>
+In general, it is not easy to describe the cohomology annihilator ideal with only a few classes of rings where a complete description is possible. One of these classes is the class of <a href="https://www.sciencedirect.com/science/article/pii/S0021869319305198">one dimensional reduced complete Gorenstein local rings</a>. In this case, the cohomology annihilator ideal coincides with the conductor ideal (see my first paper). Given a commutative ring $R$, let $\overline{R}$ denote the integral closure of $R$ in its total ring of fractions. Then, the <i>conductor ideal</i> is defined as the annihilator of the $R$-module $\overline{R}/R$. When $R$ is an analytically unramified Gorenstein ring, the conductor is isomorphic to the annihilator of the stable endomorphism ring of $\overline{R}$ as an $R$-module and in dimension one, $\overline{R}$ is maximal Cohen-Macaulay as an $R$-module. Hence, the main result of <a href="https://www.sciencedirect.com/science/article/pii/S0021869319305198">(this paper)</a> can be rephrased as follows: When $R$ is a one dimensional reduced complete Gorenstein local ring, if a ring element $r \in R$ annihilates the stable endomorphism ring of $\overline{R}$, then it annihilates the stable endomorphism ring of every maximal Cohen-Macaulay $R$-module. 
+<br><br>
+This observation motivates the following question: given a Gorenstein local ring $R$, is it always possible to find a single maximal Cohen-Macaulay module $M$ such that any annihilator of the stable endomorphism ring of $M$ is also an annihilator of the entire singularity category? Towards understanding this question, it is natural to consider the following full subcategory of $\mathrm{MCM}(R)$- the category of maximal Cohen-Macaulay $R$-modules:
+\begin{align*}
+    \mathrm{cl}(M) = \{ L \in \mathrm{MCM}(R) \colon \underline{\mathrm{ann}}_R(L) \subseteq \underline{\mathrm{ann}}_R(M) \}
+\end{align*}
+where $\underline{\mathrm{ann}}_R(*) = \mathrm{ann}_R \underline{\mathrm{End}}_R(*)$ is the annihilator of the stable endomorphism ring of $*$ which we call the <i>stable annihilator</i> of $*$. By abuse of notation, we will also consider this as a subcategory of the stable category of maximal Cohen-Macaulay modules.
+<br><br>
+Further abusing the notation, we consider $\mathrm{cl}(M)$ as a subset of the set of isomorphism classes of maximal Cohen-Macaulay $R$-modules. We define a preorder by declaring $L \leq M$ if and only if $L \in \mathrm{cl}(M)$. In Section 2, we recall definitions from the literature regarding preorders and related topologies. Our motivating question then becomes: is there a single maximal Cohen-Macaulay module $M$ which is in the intersection of all nonempty closed sets? The following theorem is our first main theorem which describes our motivating question in terms of topological properties.
+<br><br>
+<b>Theorem.</b>
+The set of isomorphism classes of maximal Cohen-Macaulay modules is compact if and only if there is a single maximal Cohen-Macaulay module $M$ such that $\underline{\mathrm{ann}}_R(M) \subseteq \underline{\mathrm{ann}}_R(X)$ for every maximal Cohen-Macaulay module $X$.
+<br><br>
+Therefore, for instance, the set of isomorphism classes of maximal Cohen-Macaulay modules over a one dimensional reduced complete Gorenstein local rings is compact. 
+
+    </p>
+    <hr style="border:1px solid" class="w3-round">
+
+    <p>I ignore the rest of the introduction.</p>
+
+      <h2>New developments</h2>
+
+      <p>Last week Kaito Kimura, a student of Ryo Takahashi, from Nagoya University, uploaded a preprint on Arxiv and they highly improved our results. First of all, they extended our definition of the Alexandrov space for Gorenstein local rings to Cohen-Macaulay local rings. Then, they showed that the following are equivalent when $R$ is a non-regular Cohen-Macaulay local ring.
+        <ol>
+            <li>The Alexandrov space of maximal Cohen-Macaulay $R$-modules which are locally free on the punctured spectrum is compact.</li>
+            <li>The dimension of the category of maximal Cohen-Macaulay modules which are locally free on the punctured spectrum is finite.</li>
+            <li>The cohomology annihilator is $\mathfrak{m}$-primary.</li>
+            <li>The completion $\hat{R}$ has an isolated singularity.</li>
+        </ol>
+        Furthermore, the Alexandrov space of maximal Cohen-Macaulay modules is compact if one of these equivalent conditions hold. So, it turns out that our compactness condition is equivalent to having a completion with an isolated singularity. Pretty cool!
+
+      </p>
+    </div>
+  
+     
+     
+  <div class="w3-container" style="margin-top:10px" id="end-of-post">
+    <hr style="width:50px;border:2px solid" class="w3-round">
+    <p>Go back to the <a href="#header">top of this page</a> to return to Blog Home and buy me a coffee if you enjoyed this post.</p>
+  </div>
+ 
+        
+  
+  </div>        
+  
+</body>
+</html>

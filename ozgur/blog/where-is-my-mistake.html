@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Özgür'ün Blogu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="icon" type="image/x-icon" href="umlaut.png">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</head>
+
+
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="header">
+      <h3><a href="https://www.sntp.ca">Sntp Home</a> | <a href="https://www.sntp.ca/ozgur/blog">Blog Home</a> | <a href="https://www.buymeacoffee.com/ozguresentepe">Buy me a coffee</a></h3>
+      <h1 class="w3-jumbo"><b>Özgür'ün Blogu.</b></h1>
+      <h1 class="w3-xxxlarge w3-text"><b>Where is my mistake?</b></h1>
+      <hr style="width:50px;border:5px solid" class="w3-round">
+    </div>
+  
+    <!-- About -->
+    <div class="w3-container" id="content" style="margin-top:7px">
+      <h2>Where is my mistake?</h2>
+
+
+      <p>I was in Berkeley from January 20 to February 20 attending the Commutative Algebra Program at MSRI/SLMath. This is why the blog was neglected. Shout out to Parker (Glynn-Adey) who emailed me and asked what was up with the blog. I should also probably add an RSS thingy to this.</p>
+
+      <p>There is a big Berkeley Diaries post coming up. But for the meantime, I am going to share something, a mistake that cost me a day to figure out. Your mission, if you choose to accept it, to find where the mistake is. If you are a commutative algebra/algebraic geometry person, you should be able to. If not, you should still be able to follow the steps below and try to check each step without really knowing the terms, it is a fun game to chase things even if you can not find the mistake at the end.</p>
+
+      <h2>Stable Trace Ideals and Applications.</h2>
+
+      <p>I was reading the paper <a href="https://arxiv.org/abs/2106.07064">Stable trace ideals and applications</a> by Hailong Dao and Haydee Lindo. <b>Corollary 7.5.</b> states that <i>if $R$ is an Arf ring such that any regular ideal has a principal reduction, then any regular reflexive ideal is isomorphic to a trace ideal.</i> I thought I found a counterexample to this Corollary and I was confused. Below is my ``counterexample".</p>
+
+      <p> 
+        <ol>
+            <li>Firstly, assume that $R$ is a one-dimensional normal local domain with infinite residue field and further suppose that $R$ is not Gorenstein.</li>
+            <li>
+                Since $R$ is a one-dimensional domain, it is Cohen-Macaulay. See <a href="https://en.wikipedia.org/wiki/Cohen%E2%80%93Macaulay_ring">the examples in this Wikipedia page.</a>
+            </li>
+            <li>
+                Since $R$ is normal, it is semi-normal. See <a href="https://en.wikipedia.org/wiki/Seminormal_ring">this Wikipedia page</a>.
+            </li>
+            <li>
+                Since $R$ is semi-normal, it is an Arf ring. See <a href="https://en.wikipedia.org/wiki/Seminormal_ring">the introduction of this paper</a> by Ryotaro Isobe. 
+            </li>
+            <li>
+                Since $R$ is a one-dimensional Cohen-Macaulay domain, the localisation at the unique minimal prime ideal is a field and therefore, $R$ is generically Gorenstein. (Generically Gorenstein means, the localisation at each minimal prime ideal is Gorenstein). In this case the canonical module (if it exists and let's assume it does exist) is isomorphic to a height 1 ideal. See <a href="https://leuschke.org/uploads/Research/CMReps-2011-12-31.pdf"> Proposition 11.6</a> of this book by Graham Leuschke and Roger Wiegand.
+            </li>
+            <li>
+                By the above book, Corollary A.14, and our local normal domain assumption, we see that every maximal Cohen-Macaulay module, in particular the canonical module, is reflexive.
+            </li>
+            <li>Since we assumed that $R$ has infinite residue field, every ideal has a principal reduction. See <a href="https://arxiv.org/abs/2106.07064">Remark 3.4 in this paper</a>, for example.</li>
+            <li>
+                Since $R$ is a domain, the canonical ideal is a regular ideal. That is, it contains a nonzerodivisor. 
+            </li>
+            <li>
+                Now, we are satisfying the conditions of the theorem (Corollary 7.5 <a href="https://arxiv.org/abs/2106.07064"> of Dao-Lindo</a>.) Therefore, we must have that our canonical ideal is a trace ideal. 
+            </li>
+            <li>
+                By Theorem 11.5 of the above book of Leuschke-Wiegand, the endomorphism ring of the canonical module is free of rank 1. That is, it is isomorphic to $R$.
+            </li>
+            <li>
+                By <a href="https://arxiv.org/pdf/1603.08576.pdf">Proposition 2.8 of this paper</a>, we see that the $R$-dual of our canonical module is $R$. 
+            </li>
+            <li>Since we established that the canonical module is reflexive, its double dual is isomorphic to itself (by definition) and by the previous item, we established that the double dual should be isomorphic to the dual of a free module which is free. Therefore, we see that the canonical module must be free.</li>
+            <li>By definition of a Gorenstein local ring, a Cohen-Macaulay local ring is Gorenstein if the canonical module is free. We assumed that our ring is not Gorenstein. This gives us a contradiction.</li>
+        </ol>
+      </p>
+
+      <p><b>Note.</b> I figured out the mistake. But if you read this and tried to find it yourself, send me an email and also say hi. My email address is available on my personal page which you can access from the top of this page.</p>
+      
+    </div>
+  
+     
+     
+  <div class="w3-container" style="margin-top:10px" id="end-of-post">
+    <hr style="width:50px;border:2px solid" class="w3-round">
+    <p>Go back to the <a href="#header">top of this page</a> to return to Blog Home and buy me a coffee if you enjoyed this post.</p>
+  </div>
+ 
+        
+  
+  </div>        
+  
+</body>
+</html>

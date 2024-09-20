@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Prague talk September 2024</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/theme/ozgur.css" id="ozgur">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+<!-- Baslik -->
+
+				<section data-background-color="aquamarine">
+					<h3>Annihilators and decompositions of singularity categories</h3>
+					<p class="r-fit-text">Özgür Esentepe - University of Graz<br> Triangulated categories in algebra and geometry <br> Prague - September 2024
+                    </p>
+				</section>
+
+<!-- Intro -->            
+ 
+				<section data-background-color="rgb(230, 182, 28)">
+					<h3>A Poem</h3>
+						As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into an object of a triangulated category, he saw some ring elements who wanted to annihilate him but he rejected, he was not perfect, he was not free and definitely not projective. Last time he checked he was a subject, not an object. 
+
+						He did not know how to express himself. There is nothing wrong about it he tried to write a song about it, he had found an upper bound but did not like it, it was not his sound. The song he composed was not satisfactory, so he decided to decompose his ambient category.
+				</section>
+
+				<section>
+                    <section>
+                        <h2>Today's theorem</h2> 
+
+						<div style="text-align: left;">
+							Let $x_1, \ldots, x_n$ be elements of a commutative Noetherian ring $R$ such that the product $x_1 \cdot \cdot \cdot x_n$ belongs to $\mathrm{ann} \mathsf{D}_{\mathrm{sg}}(R) $. 
+						</div>
+						<div class='multiCol'>
+							<div class='col'>
+								<p style="text-align: left;" class="fragment" data-fragment-index="1"> <font size ="5"> A: We have <mark style="background: rgb(230, 182, 28)">a decomposition </mark> \[
+									\mathsf{D}_{\mathrm{sg}}(R) = \mathsf{smd}(\mathsf{C}(x_1) * \ldots * \mathsf{C}(x_n) )
+									\]</font></p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="3"> <font size="5">This is joint work with <mark style="background: rgb(230, 182, 28)">Ryo Takahashi.</mark> </font> </p>
+							</div>
+							<div class='col'>
+								<p style="text-align: left;" class="fragment" data-fragment-index="2"> <font size ="5">B: We have <mark style="background: rgb(230, 182, 28)"> an upper bound </mark>
+									\[
+									\dim \mathsf{D}_{\mathrm{sg}}(R) \leq \sum_{i=1}^n \dim \mathsf{D}_{\mathrm{sg}}(R/x_i R) + n - 1
+									\]assuming that no $x_i$ is a unit or a zerodivisor. </font>
+								</p>
+							</div>
+						</div>             
+                    </section>
+                    
+				</section>
+
+<!-- Our goal for the day -->
+			<section>
+				<section data-background-color="pink">
+					<h1>Depth</h1>
+					<p class="fragment">Until further notice, let $R$ be a commutative Noetherian and local with maximal ideal $\m$.</p>
+					<p class="fragment"><font size="5">And assume all modules are finitely generated.</font></p>
+				</section>
+				<section> 
+					<div class='multiCol'>
+						<div class='col'>
+							<p class="fragment"><font size="5">A ring element $x \in \m$ is a <mark style="background: rgb(230, 182, 28)">nonzerodivisor</mark> on a module $M$ if $xm = 0$ implies $m =0$.</font></p>
+							<p class="fragment"><font size="5">A sequence of elements $x_1, \ldots, x_n \in \m$ is a <mark style="background: rgb(230, 182, 28)">regular sequence</mark> on a module $M$ if $x_1$ is a nonzerodivisor on $M$ and $x_{i+1}$ is a nonzerodivisor on $M/(x_1,\ldots, x_i)M$ for any $i = 1, \ldots, n-1$.</font></p>
+							<p class="fragment"><font size="5">The <mark style="background: rgb(230, 182, 28)">depth</mark> of a module $M$ is the maximum length of a regular sequence on $M$.</font></p>
+						</div>
+						<div class="col">
+							<p class="fragment"><font size="5">The depth of a nonzero module is always bounded above by the Krull dimension of the ring.</font></p>
+							<p class="fragment"><font size="5">We say that $R$ is <mark style="background: rgb(230, 182, 28)">Cohen-Macaulay</mark> if the depth of the regular module equals the Krull dimension.</font></p>
+							<p class="fragment"><font size="5">We say that a module $M$ over a Cohen-Macaulay ring is <mark style="background: rgb(230, 182, 28)">(maximal) Cohen-Macaulay</mark> if the depth of $M$ equals the Krull dimension of $R$.</font></p>
+						</div>
+					</div>
+					
+				</section>
+					
+				<section  data-background-color = "pink">
+					<h3>Depth Lemma</h3>
+					<p style="text-align: left;">
+						Let $0 \to M \to N \to L \to 0$ be a short exact sequence of $R$-modules.
+					</p>	
+					<p>
+						<ol>
+							<li class="fragment">
+								$\depth (M) \geq \min\{\depth(N), \depth(L) + 1\}$,
+							</li>
+							<li class="fragment">
+								$\depth (N) \geq \min\{\depth(M), \depth(L)\}$,
+							</li>
+							<li class="fragment">
+								$\depth (L) \geq \min\{\depth(M) -1, \depth(N)\}$.
+							</li>
+						</ol>
+					</p>
+				</section>
+				<section data-background-color="pink">
+					<h3>Example 1</h3>
+					<p style="text-align: left;">Consider a short exact sequence
+						\[
+							0 \to \Omega M \to P \to M \to 0
+						\]
+						where $P$ is free defining the syzygy $\Omega M$. Then, we have
+						\[
+						\depth(\Omega M) \geq \min\{\depth (R), \depth(M) + 1\}.
+						\]
+					</p>
+				</section>
+				<section data-background-color="pink">
+					<h3>Example 2</h3>
+					<p style="text-align: left;">Consider a short exact sequence
+						\[
+							0 \to M \xrightarrow{x} M \to M/xM \to 0 \quad .
+						\]
+						Then, we have
+						\[
+						\depth(M/xM) \geq \min\{\depth (M), \depth(M) - 1\}.
+						\]
+					</p>
+				</section>
+				<section data-background-color="pink">
+					<h3>Example 1 + 2</h3>
+					<p style="text-align: left;">
+						If $M \in \MCM(R)$ and $x$ is a nonzerodivisor in $R$, then $\Omega(M/xM) \in \MCM(R)$.
+					</p>
+					<p style="text-align: left;" class="fragment">
+						<b>Question: </b>Can we understand the map \[ M \mapsto \Omega(M/xM) \] on $\MCM(R)$?
+					</p>
+				</section>
+				<section>
+					<div class="multiCol">
+						<div class="col">
+							<p><font size="5">Let $S = \mathbb{C}[[x_0, \ldots, x_d]]$ and $f$ be a nonzero nonunit element in $S$.</font></p>
+							<p class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Knörrer:</mark> Put $R=S[y]/(f+y^2)$. Then, for any $M \in \MCM(R)$, we have \[\Omega(M/yM) \cong M \oplus \Omega M .\]  </font></p>
+							<p class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Herzog-Popescu:</mark> Put $R=S[y]/(f+y^k)$. Then, for any $M \in \MCM(R)$, we have \[\Omega(M/y^{k-1}M) \cong M \oplus \Omega M .\]  </font></p>
+						</div>
+						<div class="col">
+							<p class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">More generally:</mark> Let $R$ be a commutative Noetherian ring and $M$ be an $R$-module. Assume $x$ is a nonzerodivisor on $M$. Then, we have
+							\[ 
+							 \Omega(M/xM) \cong M \oplus \Omega M
+							\] 
+						if and only if $x\Ext_R^1(M, \Omega M) = 0$.
+						</font></p>	
+						<p class="fragment"><font size="4"><mark style="background: rgb(230, 182, 28)">Fun fact:</mark> We always have an equality \[\sann_R(M):= \ann_R\sEnd_R(M) = \ann_R\Ext_R^1(M, \Omega M) \]</font></p>
+						</div>
+					</div>
+				</section>
+				<section data-background-color="pink">
+					<h3>The subcategory $\C(x)$</h3>
+					<p>Let $M \in \MCM(R)$ and $x$ be a nonzerodivisor. Then, we have 
+						\[ \Omega (M/xM) \cong M \oplus \Omega M  \iff x \in \sann_R(M) \]
+					</p>
+					<p class="fragment"><b>Definition:</b>
+						\[
+							\C(x): = \{ M \in \MCM(R) \colon x \in \sann_R(M) \}
+						\]
+					</p>
+					<p class="fragment"><font size="5">We will change this definition later.</font></p>
+				</section>
+
+
+			</section>
+			
+
+<!--Singularity Category-->
+
+				<section>
+					<section data-background-color="pink">
+						<h2> The singularity category </h2>
+					</section>
+					<section data-background-color="white">
+						<h3>Hilbert's Syzygy Theorem</h3>
+						<p style="text-align: left;">
+							Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
+						</p>
+                        
+                        <p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
+						<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
+						<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
+						<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
+					</section>
+					<section data-background-color="white">
+						<p style="text-align: left;"> <b>Question: </b> Over which rings <i>any bounded complex of finitely generated modules</i> is quasi-isomorphic to a perfect complex? </p>
+						<p style="text-align: left;" class="fragment"> <b>Auslander-Buchsbaum-Serre:</b> Regular rings. </p>
+                        <p style="text-align: left;" class="fragment"> <b>The singularity category:</b> \[ \Dsing(R) := \frac{\mathsf{D}^{b}(R)}{\mathrm{perf}(R)} \quad .\] </p>
+					</section>
+				<section>
+
+					<section>
+						<h3>Hilbert's syzygy theorem</h3>
+					
+						<div class='multiCol'>
+							<div class='col'>
+								Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
+								<p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
+								<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
+							</div>
+							<div class='col'>
+								<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
+								<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
+							</div>
+						</div>
+					</section>
+					
+					  
+					
+			</div>
+
+		</div>
+
+		<script src="../../reveal.js-master/dist/reveal.js"></script>
+		<script src="../../reveal.js-master/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+                            D: '\\mathsf{D}' ,
+							C: '\\mathsf{C}' ,
+                            Dsing: '\\mathsf{D}_{\\mathrm{sg}}' ,
+                            ann: '\\mathrm{ann}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ],
+							m: '\\mathfrak{m}',
+							depth: '\\mathrm{depth}',
+							MCM: '\\mathrm{MCM}',
+							Ext: '\\mathrm{Ext}',
+							sann: '\\underline{\\mathrm{ann}}',
+							End: '\\mathrm{End}',
+							sEnd: '\\underline{\\mathrm{End}}',
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+	</body>
+</html>

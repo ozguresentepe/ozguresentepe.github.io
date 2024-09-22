@@ -166,7 +166,16 @@
 					</p>
 					<p class="fragment"><font size="5">We will change this definition later.</font></p>
 				</section>
-
+				<section data-background-color="pink">
+					<h3>This is a nice subcategory</h3>
+					<p>
+						\[
+							\C(x): = \{ M \in \MCM(R) \colon x \in \sann_R(M) \}
+						\]
+						It is closed under finite direct sums, direct summands, taking syzygies and it contains projectives.
+					</p>
+					<p class="fragment">$C(1) = \mathrm{proj}(R)$.</p>
+				</section>
 
 			</section>
 			
@@ -174,42 +183,94 @@
 <!--Singularity Category-->
 
 				<section>
-					<section data-background-color="pink">
-						<h2> The singularity category </h2>
+					<section data-background-color="rgb(114, 158, 70)">
+						<h1> The singularity category </h1>
 					</section>
-					<section data-background-color="white">
-						<h3>Hilbert's Syzygy Theorem</h3>
-						<p style="text-align: left;">
-							Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
-						</p>
-                        
-                        <p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
-						<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
-						<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
-						<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
-					</section>
-					<section data-background-color="white">
-						<p style="text-align: left;"> <b>Question: </b> Over which rings <i>any bounded complex of finitely generated modules</i> is quasi-isomorphic to a perfect complex? </p>
-						<p style="text-align: left;" class="fragment"> <b>Auslander-Buchsbaum-Serre:</b> Regular rings. </p>
-                        <p style="text-align: left;" class="fragment"> <b>The singularity category:</b> \[ \Dsing(R) := \frac{\mathsf{D}^{b}(R)}{\mathrm{perf}(R)} \quad .\] </p>
-					</section>
-				<section>
-
-					<section>
-						<h3>Hilbert's syzygy theorem</h3>
 					
+					<section>
 						<div class='multiCol'>
 							<div class='col'>
-								Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
-								<p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
-								<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
+
+								<h3>Hilbert's syzygy theorem</h3>
+					
+								<p> <font size="5"> 	Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
+								</font></p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="1"> <font size="5">the $n$th syzygy module of $M$ is free.</font> </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="2"> <font size="5">the projective dimension of $M$ is at most $n$.</font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="3"> <font size="5"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</font></p>
 							</div>
 							<div class='col'>
-								<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
-								<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="4"><font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark> Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex?</font>  </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="5"> <font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark>	 Over which rings <i>any bounded complex of finitely generated modules</i> is quasi-isomorphic to a perfect complex? </font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="6"> <font size="5"><mark style="background: rgb(230, 182, 28)">Auslander-Buchsbaum-Serre and more:</mark>	 Regular rings.</font> </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="7"><font size="5"><mark style="background: rgb(230, 182, 28)">Singularity Category:</mark> \[ \Dsing(R) := \frac{\mathsf{D}^{b}(R)}{\mathrm{perf}(R)} \quad .\]</font>  </p>
 							</div>
 						</div>
 					</section>
+					<section>
+						<div class='multiCol'>
+							<div class='col'>
+
+								<h3>Buchweitz's theorem</h3>
+					
+								<p> <font size="5"> Let $R$ be a Gorenstein ring. Then,
+								</font></p>
+								<span style="text-align: left;" class="fragment" data-fragment-index="1"> <font size="5">$\MCM(R)$ 								<span style="text-align: left;" class="fragment" data-fragment-index="2"> <font size="5">$\hookrightarrow \mathrm{mod}(R)$</font> </span><span style="text-align: left;" class="fragment" data-fragment-index="3" <font size="5">$\hookrightarrow \D^b(R)$</font> </span>
+							</font> </span>
+							<span style="text-align: left;" class="fragment" data-fragment-index="4"><font size="5">$\phantom{\MCM(R) \hookrightarrow \mathrm{mod}(R) \hookrightarrow} \downarrow$</font></span>
+							<span style="text-align: left;" class="fragment" data-fragment-index="4"><font size="5">$\phantom{\MCM(R) \hookrightarrow \mathrm{mod}(R) \hookrightarrow} \Dsing(R)$</font></span>
+							<p style="text-align: left;" class="fragment" data-fragment-index="5"><font size="5">gives an equivalence \[\underline{\MCM}(R) \cong \Dsing(R) \] of triangulated categories.</font></p>
+							</div>
+							<div class='col'>
+								<p style="text-align: left;" class="fragment" data-fragment-index="6" ><font size="5"> Now, for any commutative Noetherian ring, we define $\C(x)$ as
+									\[\{ X \in \Dsing(R) \colon x\cdot \End_{\Dsing(R)}(X) = 0\} \]
+								</font>  </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="7"> <font size="5">Note:	 $X$ belongs to $\C(x)$ if and only if multiplication by $x$ on $X$ factors through a perfect complex.</font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="8"> <font size="5"> $\C(x)$ is closed under finite direct sums, direct summands, shifts and it contains perfect complexes.
+								</font> </p>
+								<p class="fragment" data-fragment-index="9"><font size="5"> $C(1) = \mathrm{perf}(R)$.</font></p>
+							</div>
+						</div>
+					</section>
+					
+					<section data-background-color="white">
+						<h3> An example </h3>
+						<p style="text-align: left;"><font size="5">Let $R = \mathbb{C}[[x_0, \ldots, x_d]]/(f)$ be a hypersurface ring. Then, any MCM module is given by a matrix factorisation $(A,B)$ of $f$. Moreover, we have \[\underline{\MCM}(R) \cong \mathrm{HMF}(f) \] By the product rule, we have \[\frac{\partial}{\partial x_i} f = \frac{\partial}{\partial x_i} A \; B + A \frac{\partial}{\partial x_i} B  \] In particular, multiplication by partial derivatives of $f$ is nullhomotopic. Hence, \[ \C(\frac{\partial}{\partial x_i} f) = \Dsing (R). \] </font></p>
+						<p style="text-align: left;" class="fragment"></p>
+					</section>
+					
+					<section>
+						<h3>$\smd$ and $- * - $</h3>
+						<div class="multiCol">
+							<div class="col">
+								<p style="text-align: left;"><font size="5">Let $\A$ be an additive category and $\B$ be a subcategory. We denote by <mark style="background: rgb(230, 182, 28)">$\smd(\B)$</mark> the subcategory of $\A$ consisting of direct summands of objects in $\B$.</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5">Let $\T$ be an additive category and $\X, \Y$ be subcategories. We denote by <mark style="background: rgb(230, 182, 28)">$\X * \Y$</mark> the subcategory of $\T$ consisting of objects $E \in \T$ such that there exists an exact triangle $X \to E \to Y \to X[1]$ with $X \in \X$ and $Y \in \Y$.</font></p>
+							</div>
+							
+							<div class="col">
+								<p style="text-align: left;" class="fragment"><font size="5">We have that
+								</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"> $*$ is associative. <mark style="background: rgb(230, 182, 28)">(8)</mark> </font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"> \begin{align*}\smd(\smd (\X) * \Y) &= \smd(\X * \Y) \\ &= \smd(\X * \smd(\Y)) \quad {\color{rgb(230,182,28)}{(\mathrm{BvdB})}}\end{align*}</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Proposition:</mark> Let $x_1, \ldots, x_n \in R$. Then, \[\C(x_1 \cdots x_n) = \smd(\C(x_1) * \cdots * \C(x_n)) \]</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Corollary:</mark> Let $x_1, \ldots, x_n \in R$ be such that $x_1 \cdots x_n \in \ann \Dsing(R)$. Then, \[\Dsing(R) = \smd(\C(x_1) * \cdots * \C(x_n)) \]</font></p>
+							</div>
+						</div>
+					</section>
+					<section data-background-color="white">
+						<h3>Koszul complex enters</h3>
+						<p>The key observation which is used to prove the Proposition in the generality of all commutative Noetherian rings is the following:</p>
+						<p class="fragment">\[\C(x) = \smd\{\K(x) \otimes X \colon X \in \Dsing(R) \} \] </p>
+					</section>
+				</section>
+					
+					
+					<section>
+						<section>
+							<h1>Rouquier Dimension</h1>
+						</section>
+					</section>
+
 					
 					  
 					
@@ -231,6 +292,13 @@
 							R: '\\mathbb{R}',
                             D: '\\mathsf{D}' ,
 							C: '\\mathsf{C}' ,
+							T: '\\mathsf{T}' ,
+							A: '\\mathsf{A}' ,
+							B: '\\mathsf{B}' ,
+							X: '\\mathsf{X}' ,
+							K: '\\mathsf{K}' ,
+							Y: '\\mathsf{Y}' ,
+							Z: '\\mathsf{Z}' ,
                             Dsing: '\\mathsf{D}_{\\mathrm{sg}}' ,
                             ann: '\\mathrm{ann}',
 							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ],
@@ -241,6 +309,7 @@
 							sann: '\\underline{\\mathrm{ann}}',
 							End: '\\mathrm{End}',
 							sEnd: '\\underline{\\mathrm{End}}',
+							smd: '\\mathsf{smd}',
 						}
 					}
 				},

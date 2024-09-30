@@ -28,12 +28,6 @@
 
 <!-- Intro -->            
  
-				<section data-background-color="rgb(230, 182, 28)">
-					<h3>A Poem</h3>
-						As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into an object of a triangulated category, he saw some ring elements who wanted to annihilate him but he rejected, he was not perfect, he was not free and definitely not projective. Last time he checked he was a subject, not an object. 
-
-						He did not know how to express himself. There is nothing wrong about it he tried to write a song about it, he had found an upper bound but did not like it, it was not his sound. The song he composed was not satisfactory, so he decided to decompose his ambient category.
-				</section>
 
 				<section>
                     <section>
@@ -166,7 +160,16 @@
 					</p>
 					<p class="fragment"><font size="5">We will change this definition later.</font></p>
 				</section>
-
+				<section data-background-color="pink">
+					<h3>This is a nice subcategory</h3>
+					<p>
+						\[
+							\C(x): = \{ M \in \MCM(R) \colon x \in \sann_R(M) \}
+						\]
+						It is closed under finite direct sums, direct summands, taking syzygies and it contains projectives.
+					</p>
+					<p class="fragment">$C(1) = \mathrm{proj}(R)$.</p>
+				</section>
 
 			</section>
 			
@@ -174,43 +177,187 @@
 <!--Singularity Category-->
 
 				<section>
-					<section data-background-color="pink">
-						<h2> The singularity category </h2>
+					<section data-background-color="rgb(114, 158, 70)">
+						<h1> The singularity category </h1>
 					</section>
-					<section data-background-color="white">
-						<h3>Hilbert's Syzygy Theorem</h3>
-						<p style="text-align: left;">
-							Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
-						</p>
-                        
-                        <p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
-						<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
-						<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
-						<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
-					</section>
-					<section data-background-color="white">
-						<p style="text-align: left;"> <b>Question: </b> Over which rings <i>any bounded complex of finitely generated modules</i> is quasi-isomorphic to a perfect complex? </p>
-						<p style="text-align: left;" class="fragment"> <b>Auslander-Buchsbaum-Serre:</b> Regular rings. </p>
-                        <p style="text-align: left;" class="fragment"> <b>The singularity category:</b> \[ \Dsing(R) := \frac{\mathsf{D}^{b}(R)}{\mathrm{perf}(R)} \quad .\] </p>
-					</section>
-				<section>
-
-					<section>
-						<h3>Hilbert's syzygy theorem</h3>
 					
+					<section>
 						<div class='multiCol'>
 							<div class='col'>
-								Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
-								<p style="text-align: left;" class="fragment fade-in-then-out"> the $n$th syzygy module of $M$ is a free module.</p>
-								<p style="text-align: left;" class="fragment fade-in-then-out"> the projective dimension of $M$ is at most $n$.</p>
+
+								<h3>Hilbert's syzygy theorem</h3>
+					
+								<p> <font size="5"> 	Let $S = \mathbb{C}[x_1, \ldots, x_n]$ and $M$ be a finitely generated $R$-module. Then,
+								</font></p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="1"> <font size="5">the $n$th syzygy module of $M$ is free.</font> </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="2"> <font size="5">the projective dimension of $M$ is at most $n$.</font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="3"> <font size="5"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</font></p>
 							</div>
 							<div class='col'>
-								<p style="text-align: left;" class="fragment"> $M$ is quasi-isomorphic to a perfect complex of length at most $n$.</p>
-								<p style="text-align: left;" class="fragment"> <b>Question: </b>Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex? </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="4"><font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark> Over which rings <i>any finitely generated module</i> is quasi-isomorphic to a perfect complex?</font>  </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="5"> <font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark>	 Over which rings <i>any bounded complex of finitely generated modules</i> is quasi-isomorphic to a perfect complex? </font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="6"> <font size="5"><mark style="background: rgb(230, 182, 28)">Auslander-Buchsbaum-Serre and more:</mark>	 Regular rings.</font> </p>
+								<p style="text-align: left;" class="fragment fade-in-then-out" data-fragment-index="7"><font size="5"><mark style="background: rgb(230, 182, 28)">Singularity Category:</mark> \[ \Dsing(R) := \frac{\mathsf{D}^{b}(R)}{\mathrm{perf}(R)} \quad .\]</font>  </p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class='multiCol'>
+							<div class='col'>
+
+								<h3>Buchweitz's theorem</h3>
+					
+								<p> <font size="5"> Let $R$ be a Gorenstein ring. Then,
+								</font></p>
+								<span style="text-align: left;" class="fragment" data-fragment-index="1"> <font size="5">$\MCM(R)$ 								<span style="text-align: left;" class="fragment" data-fragment-index="2"> <font size="5">$\hookrightarrow \mathrm{mod}(R)$</font> </span><span style="text-align: left;" class="fragment" data-fragment-index="3" <font size="5">$\hookrightarrow \D^b(R)$</font> </span>
+							</font> </span>
+							<span style="text-align: left;" class="fragment" data-fragment-index="4"><font size="5">$\phantom{\MCM(R) \hookrightarrow \mathrm{mod}(R) \hookrightarrow} \downarrow$</font></span>
+							<span style="text-align: left;" class="fragment" data-fragment-index="4"><font size="5">$\phantom{\MCM(R) \hookrightarrow \mathrm{mod}(R) \hookrightarrow} \Dsing(R)$</font></span>
+							<p style="text-align: left;" class="fragment" data-fragment-index="5"><font size="5">gives an equivalence \[\underline{\MCM}(R) \cong \Dsing(R) \] of triangulated categories.</font></p>
+							</div>
+							<div class='col'>
+								<p style="text-align: left;" class="fragment" data-fragment-index="6" ><font size="5"> Now, for any commutative Noetherian ring, we define $\C(x)$ as
+									\[\{ X \in \Dsing(R) \colon x\cdot \End_{\Dsing(R)}(X) = 0\} \]
+								</font>  </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="7"> <font size="5">Note:	 $X$ belongs to $\C(x)$ if and only if multiplication by $x$ on $X$ factors through a perfect complex.</font> </p>
+								<p style="text-align: left;" class="fragment" data-fragment-index="8"> <font size="5"> $\C(x)$ is closed under finite direct sums, direct summands, shifts and it contains perfect complexes.
+								</font> </p>
+								<p class="fragment" data-fragment-index="9"><font size="5"> $C(1) = \mathrm{perf}(R)$.</font></p>
 							</div>
 						</div>
 					</section>
 					
+					<section data-background-color="white">
+						<h3> An example </h3>
+						<p style="text-align: left;"><font size="5">Let $R = \mathbb{C}[[x_0, \ldots, x_d]]/(f)$ be a hypersurface ring. Then, any MCM module is given by a matrix factorisation $(A,B)$ of $f$. Moreover, we have \[\underline{\MCM}(R) \cong \mathrm{HMF}(f) \] By the product rule, we have \[\frac{\partial}{\partial x_i} f = \frac{\partial}{\partial x_i} A \; B + A \frac{\partial}{\partial x_i} B  \] In particular, multiplication by partial derivatives of $f$ is nullhomotopic. Hence, \[ \C(\frac{\partial}{\partial x_i} f) = \Dsing (R). \] </font></p>
+						<p style="text-align: left;" class="fragment"></p>
+					</section>
+					
+					<section>
+						<h3>$\smd$ and $- * - $</h3>
+						<div class="multiCol">
+							<div class="col">
+								<p style="text-align: left;"><font size="5">Let $\A$ be an additive category and $\B$ be a subcategory. We denote by <mark style="background: rgb(230, 182, 28)">$\smd(\B)$</mark> the subcategory of $\A$ consisting of direct summands of objects in $\B$.</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5">Let $\T$ be an additive category and $\X, \Y$ be subcategories. We denote by <mark style="background: rgb(230, 182, 28)">$\X * \Y$</mark> the subcategory of $\T$ consisting of objects $E \in \T$ such that there exists an exact triangle $X \to E \to Y \to X[1]$ with $X \in \X$ and $Y \in \Y$.</font></p>
+							</div>
+							
+							<div class="col">
+								<p style="text-align: left;" class="fragment"><font size="5">We have that
+								</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"> $*$ is associative. <mark style="background: rgb(230, 182, 28)">(8)</mark> </font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"> \begin{align*}\smd(\smd (\X) * \Y) &= \smd(\X * \Y) \\ &= \smd(\X * \smd(\Y)) \quad {\color{rgb(230,182,28)}{(\mathrm{BvdB})}}\end{align*}</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Proposition:</mark> Let $x_1, \ldots, x_n \in R$. Then, \[\C(x_1 \cdots x_n) = \smd(\C(x_1) * \cdots * \C(x_n)) \]</font></p>
+								<p style="text-align: left;" class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Corollary:</mark> Let $x_1, \ldots, x_n \in R$ be such that $x_1 \cdots x_n \in \ann \Dsing(R)$. Then, \[\Dsing(R) = \smd(\C(x_1) * \cdots * \C(x_n)) \]</font></p>
+							</div>
+						</div>
+					</section>
+					<section data-background-color="white">
+						<h3>Koszul complex</h3>
+						<p class="r-fit-text">The key observation which is used to prove the Proposition in the generality of all commutative Noetherian rings is the following:</p>
+						<p class="fragment">\[\C(x) = \smd\{\K(x) \otimes X \colon X \in \Dsing(R) \} \] </p>
+
+						<p style="text-align: left;" class="fragment"><font size="5">For one direction, we recall that multiplication by $x$ on $\K(x)$ is nullhomotopic. <span class="fragment">For the other direction, we recall that we have a triangle $R \xrightarrow{x} R \to \K(x) \to R[1]$ in $\D^b(R)$. This gives us a triangle \[Y \xrightarrow{x} Y \to \K(x) \otimes Y \to Y[1] \] yielding an isomorphism $\K(x) \otimes Y \cong Y \oplus Y[1]$ when $Y \in \C(x)$. </span> </font>  </p>
+
+					</section>
+				</section>
+					
+					
+					<section>
+						<section>
+							<h1>Rouquier Dimension</h1>
+						</section>
+
+						<section data-background-color="white">
+							<h3>Definitions</h3>
+							<p style="text-align: left;"><font size="5">Let $\T$ be a triangulated category and $\X$ be a subcategory.</font> </p>
+
+							<p style="text-align: left;" class="fragment"><font size="5">Denote by $\langle \X \rangle$ the smallest subcategory that contains $\X$ and is closed under finite direct sums, direct summands and shifts.</font> </p>
+
+							<p style="text-align: left;" class="fragment"><font size="5">We put $\langle \X \rangle_0 = 0$ and define $\langle \X \rangle_n = \langle \langle \X \rangle_{n-1} * \langle \X \rangle \rangle$ for $n \geq 1$. Note that $\langle \X \rangle_1 = \langle \X\rangle$.</font> </p>
+
+							<p style="text-align: left;" class="fragment"><font size="5">We define the Rouquier dimension as \[\dim \T = \inf\{ n \geq 0 \colon \langle G \rangle_{n+1} = \T \text{ for some } G \in \T \} \quad . \] </font> </p>
+						</section>
+
+						<section data-background-color="white">
+							<h3>Theorem</h3>
+							<p style="text-align: left;"> Let $x_1, \ldots, x_n$ be elements of a commutative Noetherian ring $R$ such that the product $x_1 \cdot \cdot \cdot x_n$ belongs to $\mathrm{ann} \mathsf{D}_{\mathrm{sg}}(R) $. We have 
+								\[
+								\dim \mathsf{D}_{\mathrm{sg}}(R) \leq \sum_{i=1}^n \dim \mathsf{D}_{\mathrm{sg}}(R/x_i R) + n - 1
+								\]assuming that no $x_i$ is a unit or a zerodivisor.
+							</p>
+
+						</section>
+
+						<section>
+							<h3>Idea of the proof</h3>
+							<div class="multiCol">
+								<div class="col">
+									<p style="text-align: left;"><font size="5">Assume that \[\dim (\Dsing (R/x_i R)) = d_i < \infty \]  </font> </p>
+									<p style="text-align: left;" class="fragment"><font size="5">Pick $G_i \in \Dsing(R/x_i R)$ with \[\langle G \rangle_{d_i +1} = \Dsing(R/x_i R)\]  </font> </p>
+									<p style="text-align: left;" class="fragment"><font size="5">The surjection $R \to R/x_i R$ induces \[\Dsing(R/x_i R) \to \Dsing(R) \]  </font> </p>
+								</div>
+								<div class="col">
+									<p style="text-align: left;" class="fragment"><font size="5"> When $x$ is a nonzerodivisor, 
+										\begin{align*}
+											\C(x) &= \{ \K(x) \otimes X \colon \Dsing(R) \} \\ &= \{R/x_i R \otimes^{\mathbf{L}} X \colon X \in \Dsing R \}
+										\end{align*} </font> </p>
+										<p style="text-align: left;" class="fragment"><font size="5">We have an inclusion \[\C(x_i) \subseteq \langle G_i \rangle_{d_i+1}^{\Dsing(R)} \]  </font> </p>
+								</div>
+							</div>
+						</section>
+						
+						<section data-background-color="white">
+							<h3>Example</h3>
+							<p>
+								Let $R = \mathbb{C}[[x,y]]/(x^a + y^b)$ with $2 \leq a \leq b$. Then, \[x^{a-1} \in \ann_R \Dsing(R)\] So, we have 
+								\begin{align*}\dim \Dsing(R) &\leq (a-1) \dim \Dsing(\mathbb{C}[y]/y^b) + a-1  - 1 \\& =a-2  \end{align*}
+							</p>
+						</section>
+					</section>
+
+					<section>
+						<section data-background-color="rgb(103, 190, 230)">
+							<h1>Remarks and Poems</h1>
+						</section>
+
+						<section data-background-color="white"> 
+							<p style="text-align: left;"><font size="5">Recall the theorems of Knörrer and Herzog-Popescu? </font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">Dugas and Leuschke: <i>Some extensions of theorems of Knörrer and Herzog-Popescu
+							</i> (2021) </font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">Our paper could have been called <i>Some extensions of theorems of Dugas-Leuschke
+							</i></font></p>
+						</section>
+
+						<section data-background-color="white">
+							<p style="text-align: left;"><font size="5">Instead of nonzerodivisors, one can also use regular sequences. </font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">One way to go about this is to use induction.</font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">But we have another theorem which gives better results.</font></p>
+							<p style="text-align: left;" class="fragment"><font size="5"><b>Example:</b> $R = \mathbb{C}[[x,y,z,w]]/(f)$ with $f = x^3 + y^3 + xyz +w^2$.</font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">We have \[x^3 = \frac{1}{3} x(3x^2+yz) - \frac{1}{3}z(xy) \text{ and } y^3 = \frac{1}{3} y(3y^2+xz) - \frac{1}{3}z(xy)\]</font></p>
+							<p style="text-align: left;" class="fragment"><font size="5">So, \[ \dim \Dsing(R) \leq 3 \cdot 3 \left( \frac{1}{3} + \frac{1}{3} \right)\cdot(1+1) - 1 = 11 \] </font></p>
+
+
+
+						</section>
+
+						<section data-background-color="white">
+							<p style="text-align: left;"><font size=5> The ideal $\ann_R \Dsing(R)$ defines the singular locus of $R$ given that $\dim \Dsing(R)$ is finite (Liu 2023).</font></p>
+							<p style="text-align: left;"><font size="5">If $R$ is an isolated singularity, then $\ann_R \Dsing(R)$ is $\m$-primary.</font></p>
+						</section>
+
+						<section data-background-color="rgb(230, 182, 28)">
+							<h3>A Poem</h3>
+								As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into an object of a triangulated category, he saw some ring elements who wanted to annihilate him but he rejected, he was not perfect, he was not free and definitely not projective. Last time he checked he was a subject, not an object. 
+		
+								He did not know how to express himself. There is nothing wrong about it he tried to write a song about it, he had found an upper bound but did not like it, it was not his sound. The song he composed was not satisfactory, so he decided to decompose his ambient category.
+						</section>
+		
+
+					</section>
+
+					<section>
+						<h1>Thank you</h1>
+					</section>
 					  
 					
 			</div>
@@ -231,6 +378,13 @@
 							R: '\\mathbb{R}',
                             D: '\\mathsf{D}' ,
 							C: '\\mathsf{C}' ,
+							T: '\\mathsf{T}' ,
+							A: '\\mathsf{A}' ,
+							B: '\\mathsf{B}' ,
+							X: '\\mathsf{X}' ,
+							K: '\\mathsf{K}' ,
+							Y: '\\mathsf{Y}' ,
+							Z: '\\mathsf{Z}' ,
                             Dsing: '\\mathsf{D}_{\\mathrm{sg}}' ,
                             ann: '\\mathrm{ann}',
 							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ],
@@ -241,6 +395,7 @@
 							sann: '\\underline{\\mathrm{ann}}',
 							End: '\\mathrm{End}',
 							sEnd: '\\underline{\\mathrm{End}}',
+							smd: '\\mathsf{smd}',
 						}
 					}
 				},

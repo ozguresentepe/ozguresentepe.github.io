@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Übungen zur Linearen Algebra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="icon" type="image/x-icon" href="umlaut.png">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <center>
+        <h1 class="w3-jumbo"><b>Übungen zur Linearen Algebra</b></h1>
+        <p>Wintersemester 2024</p>
+        <h3>Gruppe 3</h3>
+        <h4><a href="../index.html">Link to the main page</a></h4>
+    </center>
+    
+   
+  </div>
+
+  <!-- About -->
+  <div class="w3-container" id="about" style="margin-top:7px">
+    <h4><b>Week 1</b></h4>
+    <ol>
+        <li>At the beginning of the lecture, Peter asked me my Erdős number and I answered that it is infinity. But today I learned that my Erdős number is actually not that high. I collaborated with <a href="https://www.math.nagoya-u.ac.jp/~takahashi/">Ryo Takahashi.</a> Ryo has more than 10 papers with <a href="https://www.commalg.org/2022/09/15/shiro-goto-1946-2022/">Shiro Goto</a> who passed away a couple years ago. Shiro Goto worked with <a href="https://de.wikipedia.org/wiki/David_Eisenbud">David Eisenbud</a> and David Eisenbud collaborated with <a href="https://en.wikipedia.org/wiki/Persi_Diaconis">Persi Diaconis</a> who (apparently) is also a magician. Diaconis himself worked with Erdős <a href="https://projecteuclid.org/ebooks/institute-of-mathematical-statistics-lecture-notes-monograph-series/A-Festschrift-for-Herman-Rubin/chapter/On-the-distribution-of-the-greatest-common-divisor/10.1214/lnms/1196285379.pdf">on the distribution of the greatest common divisor.</a> So, my Erdős number seems to be 5.</li>
+        <li>We started the day with a question on two lines in the plane. The two lines were given in different ways and <b>Logy</b> showed us how we can go from one representation of a line to another representation using a very important tool: the normal vector. Then, we discussed what we mean by the intersection of two lines and how we can compute it. We also discussed an alternative method to solve this problem without needing the normal vector.</li>
+        <li>The second question was about two planes in the three dimensional space this time and the idea was similar to the first question. One must know how to move between two representations of the same plane. <b>Leanka</b> explained us her approach to this problem and helped us compute the intersection.</li>
+        <li>In the third question, <b>Dominik L.</b> showed us how he handled the system of equations $$\begin{align*} x + cy &= 1 \\  cx + y &= -1 \end{align*}$$ where $c$ is some real number. He used the fact that if two numbers $x$ and $y$ satisfy this system, then they must also satisfy the third equation $(1+c)x + (1+c)y = 0$ which we get by adding the two equations. From here, we realised that for $c=-1$, we have infinitely many solutions. Because, Dominik said, when $(1+c)(x+y)=0$ we either have $1+c = 0$ or $x+y = 0$. If $c = -1$, this equation is satisfied for all $x, y \in \mathbb{R}$. So, our solution set is the line $x-y=1$. If $c \neq -1$, then we know that we must have $x+y = 0$. This gives us $y = -x$. Plugging this into the first equation, we get $x - cx = 1$ and we see that $x = 1/1-c$ provided that $c \neq 1$. When $c=1$, we do not have any solutions. We also thank Peter for helping us with this.</li>
+        <li>Then, the fourth question had two systems of linear equations and <b>Peter</b> volunteered to solve them. Both of these systems required to see a "trick" to be able to solve them nicely. For the first system, the trick was to add up all the equations. Then, we would get a value for $x_1 + x_2 + x_3 + x_4$. We also know from the question the value of $x_1 + x_2 + x_3$. So, this is enough information to find $x_4$. Same method to find $x_1, x_2$ and $x_3$. For the second question, the trick was to write $2x_i$ as $x_i + x_i$. This gave us $$x_{i} - x_{i-1} = x_{i+1} - x_i$$ for any $2 \leq i \leq 2$ using the equations which are not the top and the bottom equations. Peter called this difference $s$. The top equation told us that $s = x_2 -x_1 = x_1 - a$. Peter then used induction to show that $x_i = a + is$ for any $1 \leq i \leq n$. Finally, combininb this with the last equation, he was able to solve for $s$ in terms of $a$ and $b$ which finished the problem.</li>
+        <li>In the fifth question, <b>Leon</b> gave us a geometric argument to find 3 points which would form a parallellogram when combined with the three given points in the question (so we found 3 parallellograms). Similarly, in the second part, he found squares.</li>
+        <li>For the next question, <b>Leonie</b> computed areas of some special triangles inside a rectangle using line equations to find intersection points.</li>
+        <li>And the last question was solved by <b>Lisa</b>. The point of the question was to be able to appreciate the axioms of a vector space (or properties of addition and scalar multiplication in $\mathbb{R}^2$). The first part was a tedious task using commutativity and associativity multiple times. Lisa proved the second part using two cases: the case where $a$ is the null vector and the case where it is not. But we later discussed that there was no need for that. Finally, in the third part, we saw that if $\alpha a = \alpha b$ then we either have $\alpha = 0$ or $a =b$. Lisa was able to justify each of her steps by referring to a property of the addition (commutativity, associativity, existence of a zero vector, existence of additive inverses) or other facts which were proved in class (such as $0c = o$).</li>
+    </ol>
+  </div>
+   
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ProfSlam 2025	</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/theme/ozgur.css" id="ozgur">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+<!-- Baslik -->
+
+	<section data-background-color="aquamarine">
+					<h3>Some homological algebra <br>and<br> chicken nuggets</h3>
+					<p class="r-fit-text">Özgür Esentepe - University of Graz<br> Prof Slam 2025 <br> <font size="6">www.sntp.ca/ozgur/talks/profslam</font>
+                    </p>
+	</section>
+
+<!-- Homology -->            
+ 
+	
+	<section>
+		<section>
+						<h1>Homology</h1>
+		</section>
+        <section> 
+                        <div class='multiCol'>
+                            <div class='col'>
+                                <p><font size="5">How do you solve the equation
+                                    \[ x^2 - 3x + 2 =0 \]
+                                    in real numbers?</font></p>
+                                <p class="fragment"><font size="5">\[ \boxed{x^2 - 3x + 2 = (x-1)(x-2) = 0} \]
+                                        This implies $x = 1$  or  $x = 2$.</font>
+                                    </p>
+                                <p class="fragment"><font size="5">You use the <mark style="background: rgb(230, 182, 28)">fact</mark> that \[ab = 0 \iff a = 0 \text{ or } b= 0 \]</font></p>
+                                <p class="fragment"><font size="5">This fact does not work with matrices!</font></p>
+                                
+                            </div>
+                            <div class="col">
+                                <p class="fragment"><font size="5">In the matrix world, \[ AB = 0 \iff \mathrm{col}(B) \subseteq \mathrm{null}(A) .\]
+								</font></p>
+                                <p class="fragment"><font size="5">In the world of linear maps, \[f \circ g = 0 \iff \mathrm{im}(g) \subseteq \mathrm{ker}(f).
+									\]
+									 </font></p>
+                                <p class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark> What is the difference between $\mathrm{im}(g)$ and $\mathrm{ker}(f)$?</font></p>
+								<p class="fragment"><font size="5">We look at the ``quotient" $H = \frac{\mathrm{ker}(f)}{\mathrm{im}(g)} $.</font></p>
+								<p class="fragment"><font size="5">We have \[ H = 0 \iff \mathrm{im}(g) = \mathrm{ker}(f). \]</font></p>
+                            </div>
+                        </div>
+                        
+        </section>
+		<section>
+						<p><font size="5">Let $R$ be a ring and $M$ be an $R$-module.
+							</font></p>
+
+							<font size="5"><ul class="fragment"><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
+
+							<p class="fragment"><font size="5">Not every finitely generated module is free.</font></p>
+
+							<p class="fragment"><font size="7">However,</font><br><font size="5">we can always find a (possibly infinite) sequence of free modules \[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n = 0 \text{ for } n>0 \quad,\quad H_0 \cong M.\]</font> </p>
+							<p class="fragment"><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p>
+		</section>
+		
+		<section>
+						<div class='multiCol'>
+                            <div class='col'>
+                              <p><font size="5">Let $R$ be a ring and $M$ be an $R$-module.
+								</font></p>
+	
+								<font size="5"><ul><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
+	
+								<p><font size="5">Not every finitely generated module is free.</font></p>
+	
+								<p><font size="5">However, we can always find a (possibly infinite) sequence $\mathcal{F}$ of free modules </font><font size="3">\[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n(\mathcal{F}) = 0 \text{ for } n>0 \quad,\quad H_0(\mathcal{F}) \cong M.\] </font></p>
+								<p><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p> 
+                            </div>
+                            <div class="col">
+                                <p class="fragment"><font size="5">Let $\mathrm{Hom}_R(M,N)$ denote all $R$-linear homomorphisms from $M$ to $N$ and $\mathcal{F}$ be a resolution of $M$.
+								</font></p>
+                                <p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $d_n \circ g \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n-1}, N) \xrightarrow{\partial_n} \mathrm{Hom}_R(F_{n}, N).
+								  \]</font></p>
+                                <p class="fragment"><font size="5">It is a <mark style="background: rgb(230, 182, 28)">fact</mark> that $\partial_{n+1} \circ \partial_n = 0$ for any $n \geq 0$. </font></p>
+								<p class="fragment"><font size="5">BUT! We may now have homologies!</font></p>
+								<p class="fragment"><font size="5">We put \[E^n(M,N) = H_n(\mathrm{Hom}_R(\mathcal{F}, N)) \]</font></p>
+                            </div>
+                        </div>       
+		</section>
+	
+    </section>
+	
+	<section data-background-color="pink">
+		<h3>What do I study?</h3>
+		<ul>
+			<li>I study annihilators of these $E^n(M,N)$.</li>
+			<li>They carry a lot of geometric information.</li>
+			<li>I study geometric properties of solutions sets of polynomials using this type of computations.</li>
+		</ul>
+	</section>
+                    
+	<section>
+		<section  data-background-color="rgb(230, 182, 28)">
+			<h1>Nuggets</h1>
+		</section>
+
+		<section  data-background-color="rgb(230, 182, 28)">
+			<div class='multiCol'>
+				<div class='col'>
+				  <p><font size="5">Let $a_1, \ldots, a_n$ be positive integers. Which numbers can you write as \[ m_1 a_1 + \cdots + m_n a_n \]where $m_1, \ldots, m_n$ are nonnegative integers?
+					</font></p>
+
+					<font size="5"><ul><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
+
+					<p><font size="5">Not every finitely generated module is free.</font></p>
+
+					<p><font size="5">However, we can always find a (possibly infinite) sequence $\mathcal{F}$ of free modules </font><font size="3">\[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n(\mathcal{F}) = 0 \text{ for } n>0 \quad,\quad H_0(\mathcal{F}) \cong M.\] </font></p>
+					<p><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p> 
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">Let $\mathrm{Hom}_R(M,N)$ denote all $R$-linear homomorphisms from $M$ to $N$ and $\mathcal{F}$ be a resolution of $M$.
+					</font></p>
+					<p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $d_n \circ g \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n-1}, N) \xrightarrow{\partial_n} \mathrm{Hom}_R(F_{n}, N).
+					  \]</font></p>
+					<p class="fragment"><font size="5">It is a <mark style="background: rgb(230, 182, 28)">fact</mark> that $\partial_{n+1} \circ \partial_n = 0$ for any $n \geq 0$. </font></p>
+					<p class="fragment"><font size="5">BUT! We may now have homologies!</font></p>
+					<p class="fragment"><font size="5">We put \[E^n(M,N) = H_n(\mathrm{Hom}_R(\mathcal{F}, N)) \]</font></p>
+				</div>
+			</div>       
+		</section>
+	</section>
+
+			</div>
+
+		</div>
+
+		<script src="../../reveal.js-master/dist/reveal.js"></script>
+		<script src="../../reveal.js-master/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+                            D: '\\mathsf{D}' ,
+							C: '\\mathsf{C}' ,
+							T: '\\mathsf{T}' ,
+							A: '\\mathsf{A}' ,
+							B: '\\mathsf{B}' ,
+							X: '\\mathsf{X}' ,
+							K: '\\mathsf{K}' ,
+							Y: '\\mathsf{Y}' ,
+							Z: '\\mathsf{Z}' ,
+                            Dsing: '\\mathsf{D}_{\\mathrm{sg}}' ,
+                            ann: '\\mathrm{ann}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ],
+							m: '\\mathfrak{m}',
+							depth: '\\mathrm{depth}',
+							MCM: '\\mathrm{MCM}',
+							Ext: '\\mathrm{Ext}',
+							sann: '\\underline{\\mathrm{ann}}',
+							End: '\\mathrm{End}',
+							sEnd: '\\underline{\\mathrm{End}}',
+							smd: '\\mathsf{smd}',
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+	</body>
+</html>

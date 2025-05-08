@@ -85,9 +85,9 @@
 								<p><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p> 
                             </div>
                             <div class="col">
-                                <p class="fragment"><font size="5">Let $\mathrm{Hom}_R(M,N)$ denote all $R$-linear homomorphisms from $M$ to $N$ and $\mathcal{F}$ be a resolution of $M$.
+                                <p class="fragment"><font size="5">Let $\mathcal{F}$ be a resolution of $M$.
 								</font></p>
-                                <p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $d_n \circ g \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n-1}, N) \xrightarrow{\partial_n} \mathrm{Hom}_R(F_{n}, N).
+                                <p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $g \circ d_n \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n}, N) \xleftarrow{\partial_n} \mathrm{Hom}_R(F_{n-1}, N).
 								  \]</font></p>
                                 <p class="fragment"><font size="5">It is a <mark style="background: rgb(230, 182, 28)">fact</mark> that $\partial_{n+1} \circ \partial_n = 0$ for any $n \geq 0$. </font></p>
 								<p class="fragment"><font size="5">BUT! We may now have homologies!</font></p>
@@ -117,24 +117,23 @@
 				<div class='col'>
 				  <p><font size="5">Let $a_1, \ldots, a_n$ be positive integers. Which numbers can you write as \[ m_1 a_1 + \cdots + m_n a_n \]where $m_1, \ldots, m_n$ are nonnegative integers?
 					</font></p>
+					<p class="fragment"><font size="5"><b>Example:</b> With $3$ and $5$, we can create \[\langle 3, 5 \rangle = \{0,3,5,6,8,9,10,\ldots \}\] </font> </p>
+					<p class="fragment"><font size="5"><b>Keyword:</b> Numerical semigroup.</font></p>
 
-					<font size="5"><ul><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
-
-					<p><font size="5">Not every finitely generated module is free.</font></p>
-
-					<p><font size="5">However, we can always find a (possibly infinite) sequence $\mathcal{F}$ of free modules </font><font size="3">\[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n(\mathcal{F}) = 0 \text{ for } n>0 \quad,\quad H_0(\mathcal{F}) \cong M.\] </font></p>
-					<p><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p> 
 				</div>
 				<div class="col">
-					<p class="fragment"><font size="5">Let $\mathrm{Hom}_R(M,N)$ denote all $R$-linear homomorphisms from $M$ to $N$ and $\mathcal{F}$ be a resolution of $M$.
+					<p class="fragment"><font size="5">The <b>semigroup ring</b> $k[t^3, t^5]$ consists of all polynomials in a variable $t$ which you can generate by $t^3$ and $t^5$. 
 					</font></p>
-					<p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $d_n \circ g \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n-1}, N) \xrightarrow{\partial_n} \mathrm{Hom}_R(F_{n}, N).
-					  \]</font></p>
-					<p class="fragment"><font size="5">It is a <mark style="background: rgb(230, 182, 28)">fact</mark> that $\partial_{n+1} \circ \partial_n = 0$ for any $n \geq 0$. </font></p>
-					<p class="fragment"><font size="5">BUT! We may now have homologies!</font></p>
-					<p class="fragment"><font size="5">We put \[E^n(M,N) = H_n(\mathrm{Hom}_R(\mathcal{F}, N)) \]</font></p>
+					<p class="fragment"><font size="5"><b>In my thesis</b>, I considered the problem of annihilators of ``Ext" for such rings.</font></p>
+					<p class="fragment"><font size="5"><b>I showed that</b> the conductor ideal (in our example polynomials in $t^8, t^9, t^{10}, ...$) is exactly the ideal that annihilates all ``high" Ext - whenever the semigroup satisfies a certain symmetry condition.</font></p>
 				</div>
 			</div>       
+		</section>
+		<section data-background-color="rgb(230, 182, 28)">
+			<h3>And now!</h3>
+			<p>I am applying for an FWF grant to go back to study these nuggets even when that symmetry condition is not satisfied.</p>
+			<p><font size="3">Send good vibes.</font></p>
+			<p><font size="6">www.sntp.ca/ozgur/talks/profslam</font></p>
 		</section>
 	</section>
 

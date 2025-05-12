@@ -26,129 +26,237 @@
                         <br> <font size="6">Frises en algèbre, combinatoire et géométrie <br> CIRM - Mai 2025</font>
                     </p>
 	</section>
-
+	<section data-background-color="aquamarine">
+					<h3>This is joint<br>with<br>Eleonore Faber</h3>
+					<p class="fragment"><font size="5">I forgot to say this in the abstract.</font>
+                    </p>
+	</section>
 <!-- Homology -->            
  
 	
 	<section>
-		<section data-background-color="orange">
-						<h1 class="fragment shrink">Today's Menu</h1>
-                        <ul class="fragment">
-                            <li>
-                                Cluster structures for the $A_\infty$ singularity
-                            </li>
-                            <li>
-                                Infinite friezes
-                            </li>
-                            <li>
-                                Triangulations of natural numbers
-                            </li>
-                            <li>
-                                Penrose tilings
-                            </li>
-                        </ul>
+		<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/1/1a/Penrose_Tiling_%28Rhombi%29.svg" data-background-opacity="0.2">
+						<h1>Penrose Tilings</h1>
 		</section>
-        <section> 
+        <section data-background-color="yellow"> 
+			<p><font size="5">
+				Penrose tilings (up to isometry) are parametrised by <br>sequences on the two element set $\{0,1\}$ (up to tail equivalence) with the property that there are no consecutive 1s.</font>
+			</p>
                         <div class='multiCol'>
                             <div class='col'>
-                                <p><font size="5">How do you solve the equation
-                                    \[ x^2 - 3x + 2 =0 \]
-                                    in real numbers?</font></p>
-                                <p class="fragment"><font size="5">\[ \boxed{x^2 - 3x + 2 = (x-1)(x-2) = 0} \]
-                                        This implies $x = 1$  or  $x = 2$.</font>
-                                    </p>
-                                <p class="fragment"><font size="5">You use the <mark style="background: rgb(230, 182, 28)">fact</mark> that \[ab = 0 \iff a = 0 \text{ or } b= 0 \]</font></p>
-                                <p class="fragment"><font size="5">This fact does not work with matrices!</font></p>
-                                
+                               <p class="fragment"><font size="5">The set of all sequences on $\{0,1\}$ with Tychonoff topology is homemorphic to the Cantor set.</font></p>
+							   <p class="fragment"><font size="5">The map that replaces $1$ with $10$ is a homeomorphism.</font></p>
+								
                             </div>
                             <div class="col">
-                                <p class="fragment"><font size="5">In the matrix world, \[ AB = 0 \iff \mathrm{col}(B) \subseteq \mathrm{null}(A) .\]
+                                <p class="fragment"><font size="5">Tail equivalence is dense on this subspace. i.e. every equivalence class is dense.
 								</font></p>
-                                <p class="fragment"><font size="5">In the world of linear maps, \[f \circ g = 0 \iff \mathrm{im}(g) \subseteq \mathrm{ker}(f).
-									\]
+                                <p class="fragment"><font size="5">``Penrose tilings up to isometry" is a trivial topological space.
 									 </font></p>
-                                <p class="fragment"><font size="5"><mark style="background: rgb(230, 182, 28)">Question:</mark> What is the difference between $\mathrm{im}(g)$ and $\mathrm{ker}(f)$?</font></p>
-								<p class="fragment"><font size="5">We look at the ``quotient" $H = \frac{\mathrm{ker}(f)}{\mathrm{im}(g)} $.</font></p>
-								<p class="fragment"><font size="5">We have \[ H = 0 \iff \mathrm{im}(g) = \mathrm{ker}(f). \]</font></p>
                             </div>
                         </div>
-                        
         </section>
-		<section>
-						<p><font size="5">Let $R$ be a ring and $M$ be an $R$-module.
-							</font></p>
-
-							<font size="5"><ul class="fragment"><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
-
-							<p class="fragment"><font size="5">Not every finitely generated module is free.</font></p>
-
-							<p class="fragment"><font size="7">However,</font><br><font size="5">we can always find a (possibly infinite) sequence of free modules \[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n = 0 \text{ for } n>0 \quad,\quad H_0 \cong M.\]</font> </p>
-							<p class="fragment"><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p>
+		<section data-background-color="yellow">
+			 <p><font size="5">This bad topology gave rise to noncommutative geometry.</font></p>
+			 <div class='multiCol'>
+				<div class='col'>
+				   <p class="fragment"><font size="5">Connes' school of noncommutative geometry studied Penrose tilings via $\mathbb{C}^*$-algebras and $K$-theory.</font></p>
+				   <p class="fragment"><font size="5">Paul Smith saw Penrose tilings as points in a noncommutative space whose quasicoherent sheaves were given by graded modules over a noncommutative algebra.</font></p>
+					
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">Smith's ring was \begin{align*} P=\frac{\mathbb{C}\langle x,y \rangle}{(x^2)}  \end{align*} where $x,y$ both lived in degree $1$ and he considered $\mathbb{N}$-graded modules over $P$ modulo tail equivalence.
+					</font></p>	
+				</div>
+			</div>
 		</section>
 		
 		<section>
+			<p><font size="5">A decade after Smith's work came the work of August-Cheung-Faber-Gratz-Schroll.
+			</font></p>
 						<div class='multiCol'>
                             <div class='col'>
-                              <p><font size="5">Let $R$ be a ring and $M$ be an $R$-module.
-								</font></p>
+								<p class="fragment"><font size="5">Categories for Grassmannian cluster algebras of infinite rank. And also Cluster structures for the $A_\infty$-
+									singularity.</font></p>
+									<p class="fragment"><font size="5">They had the ring \begin{align*} R = \frac{\mathbb{C}[x,y]}{(x^2)} \end{align*} where $x$ lived in degree $1$ and $y$ in $-1$.</font> </p>
 	
-								<font size="5"><ul><li>$M$ is finitely generated if it has finitely many generators,</li> <li>$M$ is free if it is of the form $R^n$ for some $n$.</li></ul></font>
-	
-								<p><font size="5">Not every finitely generated module is free.</font></p>
-	
-								<p><font size="5">However, we can always find a (possibly infinite) sequence $\mathcal{F}$ of free modules </font><font size="3">\[ \ldots \to F_{n+1} \xrightarrow{d_{n+1}} F_n \xrightarrow{d_n} F_{n-1} \to \ldots \to F_1 \xrightarrow{d_1} F_0 \xrightarrow{d_0 = 0} 0 \] such that $d_{n} \circ  d_{n+1} = 0$ for all $n \geq 0$ and \[H_n(\mathcal{F}) = 0 \text{ for } n>0 \quad,\quad H_0(\mathcal{F}) \cong M.\] </font></p>
-								<p><font size="5">This is called a <mark style="background: rgb(230, 182, 28)">resolution</mark> of $M$.</font></p> 
+								<p class="fragment"><font size="5">Could we get Penrose tilings involved?</font></p>
+							 
                             </div>
                             <div class="col">
-                                <p class="fragment"><font size="5">Let $\mathcal{F}$ be a resolution of $M$.
+                                <p class="fragment"><font size="8">Yes, we could.
 								</font></p>
-                                <p class="fragment"><font size="5">If $g \colon F_{n-1} \to N$, then $g \circ d_n \colon F_n \to N$ which means we have a map \[\mathrm{Hom}_R(F_{n}, N) \xleftarrow{\partial_n} \mathrm{Hom}_R(F_{n-1}, N).
-								  \]</font></p>
-                                <p class="fragment"><font size="5">It is a <mark style="background: rgb(230, 182, 28)">fact</mark> that $\partial_{n+1} \circ \partial_n = 0$ for any $n \geq 0$. </font></p>
-								<p class="fragment"><font size="5">BUT! We may now have homologies!</font></p>
-								<p class="fragment"><font size="5">We put \[E^n(M,N) = H_n(\mathrm{Hom}_R(\mathcal{F}, N)) \]</font></p>
+                                <p class="fragment"><font size="5">Consider the category of $\mathbb{Z}$-graded maximal Cohen-Macaulay modules over $R$. Cluster tilting subcategories of this Frobenius category are in bijection with fountains of the infinitigon.
+								  </font></p>
                             </div>
                         </div>       
 		</section>
 	
     </section>
 	
-	<section data-background-color="pink">
-		<h3>What do I study?</h3>
-		<ul>
-			<li>I study annihilators of these $E^n(M,N)$.</li>
-			<li>They carry a lot of geometric information.</li>
-			<li>I study geometric properties of solutions sets of polynomials using this type of computations.</li>
-		</ul>
+	<section>
+		<section data-background-color="pink">
+			<h1>Right fountains</h1>
+		</section>
+		<section data-background-color="white">
+			<p><font size="5">During this talk, a right fountain is a triangulation of natural numbers which contains infinitely many arcs starting at 0.</font></p>
+			<img src="cirm/fountain.jpeg">
+
+		</section>
+		<section data-background-color="white">
+			<div class="multiCol">
+				<div class="col">
+					<img src="cirm/fountain.jpeg">
+					<p class="fragment"><font size="5">We will define two classes of arcs for a right fountain $R$.</font></p>
+					<p class="fragment"><font size="5">The class $A_1(R)$ will contain the fountain arcs.</font></p>
+					<p class="fragment"><font size="5">The class $A_2(R)$ will contain the arcs that connect the fountain arcs.</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">We will define two sequences.</font></p>
+					<p class="fragment"><font size="5">\begin{align*}
+						\boldsymbol{x}^R_n = \begin{cases} 1 \quad \text{if } (0,n+1) \in R \\ 0 \quad \text{else} \end{cases}
+					\end{align*}</font></p>
+					<p class="fragment"><font size="5">In the example, \begin{align*} 0,1,0,0,0,1,1,\ldots\end{align*}</font></p>
+					<p class="fragment"><font size="5">And we define the sequence $\boldsymbol{y}^R$ by the rule that $\boldsymbol{y}^R_n$ is the $(n+1)$st integer $\ell$ such that $(0,\ell) \in R$.</font></p>
+					<p class="fragment"><font size="5">In the example, \begin{align*} 3,7,8,\ldots\end{align*}</font></p>
+				</div>
+			</div>
+		</section>
+		<section data-background-color="white">
+			<h3>Mutation</h3>
+			<div class="multiCol">
+				<div class="col">
+					<p><font size="5">Every nonboundary arc in a right fountain is a diagonal of a unique quadrileteral.</font></p>
+					<p class="fragment"><font size="5">Mutation at a nonboundary arc in a right fountain replaces this arc with the other diagonal.</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">Transfinite mutations in the completed infinitigon were studied by Baur-Gratz.</font></p>
+					<p class="fragment"><font size="5">We want more mutation classes.</font></p>
+				</div>
+			</div>
+		</section>
+		<section data-background-color="white">
+			<h3>Two lemmas</h3>
+			<div class="multiCol">
+				<div class="col">
+					<p><font size="5"><b>Lemma 1.</b> Let $m$ be a positive integer and $\mu$ be the mutation at the fountain arc $(0, \boldsymbol{y}^R_m)$. Then, the sequences $\boldsymbol{x}^R$ and $\boldsymbol{x}^{\mu(R)}$ differ exactly at one place.</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5"><b>Lemma 2.</b> Let $m$ be a positive integer and $\mu$ be the mutation at the arc $(\boldsymbol{y}^R_m, \boldsymbol{y}^R_{m+1})$. Then, the sequences $\boldsymbol{x}^R$ and $\boldsymbol{x}^{\mu(R)}$ differ exactly at one place.</font></p>
+				</div>
+			</div>
+		</section>
+		<section data-background-color="white">
+			<font size="5">Let us consider the previous example and mutate at the arc $(0,3)$.</font>
+			<img src="cirm/mutation-at-fountain-arc.jpeg">
+		</section>
+		<section data-background-color="white">
+			<font size="5">Let us mutate at the arc $(3,7)$.</font>
+			<img src="cirm/another-mutation.jpeg">	
+			<font size="5">Here, $0,1,0,0,0,1,1, \ldots \mapsto 0,1,0,1,0,1,1,\ldots$.
+			</font>
+		</section>
+		<section data-background-color="pink">
+			<font size="5">Mutation at any other nonboundary arc does not change the sequence $\boldsymbol{x}^R$.</font>
+			<div class="multiCol">
+				<div class="col">
+					<p class="fragment"><font size="5">Two right fountains are called <i>equivalent</i> if one can be mutated into the other one by using only finitely many mutations at arcs in $A_1$ or $A_2$.</font></p>
+					<p class="fragment"><font size="5">Two right fountains $R_1$ and $R_2$ are equivalent if and only if $\boldsymbol{x}^{R_1}$ and $\boldsymbol{x}^{R_2}$ differ at finitely many places.</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">For an integer $n \geq 1$ \[ \boldsymbol{x}_n^R = \boldsymbol{x}_{n+1}^R = 1 \iff \boldsymbol{y}_{n+1}^R - \boldsymbol{y}_n^R = 1 \] which is equivalent to saying that $(\boldsymbol{y}^R_n, \boldsymbol{y}^R_{n+1})$ is a boundary arc.</font></p>
+					<p class="fragment"><font size="5">We say that a right fountain is <i>special</i> if it is equivalent to a right fountain where $A_2$ does not contain any boundary arcs.</font></p>
+				</div>
+			</div>
+			<p class="fragment"><font size="5"><b>Theorem.</b> Special right fountains up to equivalence is in one-to-one correspondence with Penrose tilings up to isometry.</font></p>
+		</section>
 	</section>
                     
 	<section>
 		<section  data-background-color="rgb(230, 182, 28)">
-			<h1>Nuggets</h1>
+			<h1>Friezes</h1>
 		</section>
 
-		<section  data-background-color="rgb(230, 182, 28)">
-			<div class='multiCol'>
-				<div class='col'>
-				  <p><font size="5">Let $a_1, \ldots, a_n$ be positive integers. Which numbers can you write as \[ m_1 a_1 + \cdots + m_n a_n \]where $m_1, \ldots, m_n$ are nonnegative integers?
-					</font></p>
-					<p class="fragment"><font size="5"><b>Example:</b> With $3$ and $5$, we can create \[\langle 3, 5 \rangle = \{0,3,5,6,8,9,10,\ldots \}\] </font> </p>
-					<p class="fragment"><font size="5"><b>Keyword:</b> Numerical semigroup.</font></p>
-
+		<section  data-background-color="white">
+			<div class="multiCol">
+				<div class="col">
+					<p><font size="5">An infinite (right) half-frieze is a set of positive integers $m_{(a,b)}$ with $0 \leq a \leq b$ which satisfies the following rules: <ul>
+						<li>
+							$m_{(a,a)} = 0$ for any $a \geq 0$.
+						</li>
+						<li>
+							$m_{(a,a_{a+1})} = 1$ for any $a \geq 0$.
+						</li>
+						<li>
+							$m_{(a,b)}m_{(a+1,b+1)} - m_{(a+1,b)}m_{(a,b+1)} = 1$ for any pair $(a,b)$ with $0 \leq a \leq b$.
+						</li>
+					</ul></font></p>
 				</div>
 				<div class="col">
-					<p class="fragment"><font size="5">The <b>semigroup ring</b> $k[t^3, t^5]$ consists of all polynomials in a variable $t$ which you can generate by $t^3$ and $t^5$. 
-					</font></p>
-					<p class="fragment"><font size="5"><b>In my thesis</b>, I considered the problem of annihilators of ``Ext" for such rings.</font></p>
-					<p class="fragment"><font size="5"><b>I showed that</b> the conductor ideal (in our example polynomials in $t^8, t^9, t^{10}, ...$) is exactly the ideal that annihilates all ``high" Ext - whenever the semigroup satisfies a certain symmetry condition.</font></p>
+					<p class="fragment"><font size="5">The quiddity sequence is the sequence $m_{(a, a+2)}$.</font></p>
+					<p class="fragment"><font size="5">The quiddity sequence determines the freeze.</font></p>
+
 				</div>
-			</div>       
+			</div>
+			
 		</section>
-		<section data-background-color="rgb(230, 182, 28)">
-			<h3>And now!</h3>
-			<p>I am applying for an FWF grant to go back to study these nuggets even when that symmetry condition is not satisfied.</p>
-			<p><font size="3">Send good vibes.</font></p>
-			<p><font size="6">www.sntp.ca/ozgur/talks/profslam</font></p>
+		<section data-background-color="white">
+			<font size = "5">We can visualise a right fountain by an array.</font>
+			<img src="cirm/array-example.jpeg">
+		</section>
+
+		<section data-background-color="white">
+			<font size="5">We can fill in the diagonal above $1$s by the number of triangles each vertex is adjacent to.</font> <br>
+			<img src="cirm/frieze-example.jpeg">
+			<p class="fragment"><font size="5">And this gives us an infinite right half-frieze.</font></p>
+		</section>
+
+		<section data-background-color="white">
+			<font size="5">For each $\boldsymbol{y}^R_n$, if we stop the array at the column $n$, we get a finite frieze.</font> <br>
+			<img src="cirm/finite-in-infinite.jpeg">
+		</section>
+
+		<section data-background-color="white">
+			<font size="5">The top row of this frieze can tell us the sequence $\boldsymbol{x}^R$.</font> <br>
+			<img src="cirm/frieze-example.jpeg"><br>
+			<font size="5">We just ignore the numbers which are not 1: 0,1,0,0,0,1,1 ... </font>
+			<p class="fragment"><font size="5"><b>Note.</b> Mutating at a single arc changes the triangulation and the sequence locally. It changes the whole frieze.</font></p>
+		</section>
+	</section>
+	<section>
+		<section data-background-color="orange">
+			<h1>Cluster character</h1>
+		</section>
+		<section data-background-color="white">
+			<p><font size="5">Going back to the $A_\infty$-singularity.</font></p>
+			<div class="multiCol">
+				<div class="col">
+					<p class="fragment"><font size="5">Let $\C$ denote the category of $\mathbb{Z}$-graded MCM modules over $R=\mathbb{C}[x,y]/(x^2)$.</font></p>
+					<p class="fragment"><font size="5">$R$ has countable Cohen-Macaulay type.</font></p>
+					<p class="fragment"><font size="5">The module $(x,y^k)(j)$ corresponds to the arc $(-j-k, 1-j)$.</font></p>
+					<p class="fragment"><font size="5">The modules $R(j)$ correspond to boundary arcs.</font></p>
+					<p class="fragment"><font size="5">The modules $\dfrac{R}{x}(j)$ correspond to infinite arcs $(j, \infty)$.</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment"><font size="5">The AR-quiver is</font> 
+							<img src="cirm/ar-quiver.jpeg">
+					</p>
+					<p class="fragment"><font size="5">Infinite arcs do not appear because they are not generically free.</font></p>
+				</div>
+			</div>
+		</section>
+		<section data-background-color="white">
+			Cluster character on the Frobenius category $\C$.
+			<div class="multiCol">
+				<div class="col">
+					<p class="fragment" data-fragment-index="1"><font size="5">A cluster character on $\C$ with values in a commutative ring $R$ is a map $X$ from $\mathrm{obj}(\C)$ to $R$ which takes the same values on isomorphic objects and which satisfies $X(M \oplus N) = X(M) X(N)$ and also for any $M,N$ with \[\dim_\mathbb{C}\Ext_R^1(M,N) = 1 = \dim_\mathbb{C}\Ext_R^1(N,M)\]</font></p>
+				</div>
+				<div class="col">
+					<p class="fragment" data-fragment-index="1"><font size="5"> we want an equality \[ X(M)X(N) = X(A) + X(B)\]
+						where \[0 \to M \to A \to N\to 0 \\ 0 \to N \to B \to M \to 0 \]
+					</font></p>					
+				</div>
+			</div>
 		</section>
 	</section>
 

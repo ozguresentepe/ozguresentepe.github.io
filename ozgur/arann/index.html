@@ -1,122 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Auslander-Reiten Lattice Animation</title>
+<title>Auslander-Reiten annihilators</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="icon" type="image/x-icon" href="umlaut.png">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3EJFCKR7Z5');
+</script>
 
 <style>
-  body {
-    margin: 0;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+body,h1,h2,h3,h4,h5 {
+    font-family: "Poppins", sans-serif;
+}
 
-  svg {
-    background: white;
-  }
+body {
+    font-size:16px;
+}
 
-  .dot {
-    fill: black;
-    opacity: 1;
-    transition: opacity 0.6s ease;
-  }
+.w3-half img{
+    margin-bottom:-6px;
+    margin-top:16px;
+    opacity:0.8;
+    cursor:pointer;
+}
 
-  .gone {
-    opacity: 0;
-  }
+.w3-half img:hover{
+    opacity:1;
+}
+
+/* ---------- Lattice animation ---------- */
+
+#animation-container{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.dot{
+    fill:black;
+    opacity:1;
+    transition:opacity 0.6s ease;
+}
+
+.gone{
+    opacity:0;
+}
 </style>
+
+<script>
+MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 </head>
 
 <body>
 
-<svg id="lattice" width="700" height="700"></svg>
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
+
+<div class="w3-container" style="margin-top:80px">
+
+<center>
+<h1 class="w3-jumbo"><b>Auslander-Reiten annihilators</b></h1>
+</center>
+
+<div id="animation-container">
+<svg id="lattice" width="620" height="620"></svg>
+</div>
+
+</div>
+
+</div>
+
 <script>
+
 const svg = document.getElementById("lattice");
 
 const N = 15;
-const step = 40;
+const step = 38;
 const r = 6;
 
 let points = {};
 
-// --- draw lattice ---
+// Draw lattice
 for (let i = 0; i < N; i++) {
-  for (let j = 0; j < N; j++) {
-    const cx = 50 + i * step;
-    const cy = 650 - j * step;
-
-    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", cx);
-    c.setAttribute("cy", cy);
-    c.setAttribute("r", r);
-    c.setAttribute("class", "dot");
-
-    svg.appendChild(c);
-    points[`${i},${j}`] = c;
-  }
-}
-
-// --- vanish / reset helpers ---
-function vanish(i, j) {
-  const key = `${i},${j}`;
-  if (points[key]) {
-    points[key].classList.add("gone");
-  }
-}
-
-function resetAll() {
-  for (let i = 0; i < N; i++) {
     for (let j = 0; j < N; j++) {
-      points[`${i},${j}`].classList.remove("gone");
+
+        const cx = 40 + i * step;
+        const cy = 580 - j * step;
+
+        const c = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "circle"
+        );
+
+        c.setAttribute("cx", cx);
+        c.setAttribute("cy", cy);
+        c.setAttribute("r", r);
+        c.setAttribute("class", "dot");
+
+        svg.appendChild(c);
+
+        points[`${i},${j}`] = c;
     }
-  }
 }
 
-// --- animation ---
+function vanish(i,j){
+    const key = `${i},${j}`;
+    if(points[key]){
+        points[key].classList.add("gone");
+    }
+}
+
+function resetAll(){
+    for(let i=0;i<N;i++){
+        for(let j=0;j<N;j++){
+            points[`${i},${j}`].classList.remove("gone");
+        }
+    }
+}
+
 let t = 0;
 
-function stepAnimation() {
+function stepAnimation(){
 
-  // (0,0) to (4,0)
-  if (t >= 1 && t <= 5) {
-    vanish(t - 1, 0);
-  }
-
-  // whole x-axis
-  if (t === 6) {
-    for (let i = 0; i < N; i++) vanish(i, 0);
-  }
-
-  // (0,1)
-  if (t === 7) {
-    vanish(0, 1);
-  }
-
-  // everything
-  if (t === 8) {
-    for (let i = 0; i < N; i++) {
-      for (let j = 0; j < N; j++) {
-        vanish(i, j);
-      }
+    // (0,0)...(4,0)
+    if(t>=1 && t<=5){
+        vanish(t-1,0);
     }
-  }
 
-  // restart
-  if (t === 12) {
-    resetAll();
-    t = 0;
-    setTimeout(stepAnimation, 600);
-    return;
-  }
+    // whole x-axis
+    if(t===6){
+        for(let i=0;i<N;i++){
+            vanish(i,0);
+        }
+    }
 
-  t++;
-  setTimeout(stepAnimation, 500);
+    // (0,1)
+    if(t===7){
+        vanish(0,1);
+    }
+
+    // everything
+    if(t===8){
+        for(let i=0;i<N;i++){
+            for(let j=0;j<N;j++){
+                vanish(i,j);
+            }
+        }
+    }
+
+    // restart
+    if(t===12){
+        resetAll();
+        t = 0;
+        setTimeout(stepAnimation,700);
+        return;
+    }
+
+    t++;
+    setTimeout(stepAnimation,500);
 }
 
 stepAnimation();
+
 </script>
+
+
+ <div class="w3-container" id="arc-for-gorenstein" style="margin-top:7px">
+    <h4><b>The Auslander-Reiten Conjecture for Gorenstein local rings</b></h4>
+    <p>
+        <b>The statement.</b> 
+        <br>Let $R$ be a Gorenstein local ring and $M$ a maximal Cohen-Macaulay $R$-module. If $\mathrm{Ext}_R^i(M, M) = 0$ for every $i \geq 1$, then $M$ is a free $R$-module.
+        <br>
+        <b>The animation.</b> 
+        <br>Identify the lattice point $(a,b)$ with the Ext module $\mathrm{Ext}_R^1(\Omega^a M, \Omega^b M)$ where $\Omega$ is the syzygy operator. This identifies the points $(i,0)$ on the $x$-axis with the self extensions $\mathrm{Ext}_R^1(\Omega^i M, M) = \mathrm{Ext}_R^{i+1}(M,M)$. In the beginning of the animation, points on the $x$-axis vanish, which tells us the vanishing of the self extensions. This is followed by the vanishing of $(0,1)$ which corresponds to $\mathrm{Ext}_R^1(M, \Omega M)$. This module vanishes if and only if $M$ is free. So when that vanishes, all Ext's vanish.
+        <br>
+        <b>Notes.</b>
+        <br><b>(1)</b> On the stable category of maximal Cohen-Macaulay modules over a Gorenstein local ring, the syzygy operator is an automorphism. This actually gives us an identification $(a,b) \sim (a+1, b+1)$ in our lattice.
+        <br><b>(2)</b> Instead of interpreting the animation as the vanishing of the Ext modules, we can interpet it as some ring element annihilating the Ext modules. This is the motivation behind my work on Auslander-Reiten annihilators. 
+        <br><b>(3)</b> I proved that if the Krull dimension of $R$ is $d \geq 2$ and if $R$ is an isolated singularity, then the annihilator of $\mathrm{Ext}_R^1(M, \Omega M)$ is equal to the annihilator of $\mathrm{Ext}_R^{d-1}(M,M) = \mathrm{Ext}_R^1(\Omega^{d-2} M, M)$. If in the animation, we identify the lattice points whose corresponding Ext modules agree, this theorem identifies $(d-2,0)$ with $(0,1)$.
+      </p>
+    
+  </div>
+
 </body>
 </html>

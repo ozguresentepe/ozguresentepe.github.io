@@ -33,13 +33,12 @@
 <body>
 
 <svg id="lattice" width="700" height="700"></svg>
-
 <script>
 const svg = document.getElementById("lattice");
 
 const N = 15;
 const step = 40;
-const r = 6;   // bigger dots
+const r = 6;
 
 let points = {};
 
@@ -52,7 +51,6 @@ for (let i = 0; i < N; i++) {
     const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     c.setAttribute("cx", cx);
     c.setAttribute("cy", cy);
-    c.setAttribute("cy", cy);
     c.setAttribute("r", r);
     c.setAttribute("class", "dot");
 
@@ -61,7 +59,7 @@ for (let i = 0; i < N; i++) {
   }
 }
 
-// --- vanish helper ---
+// --- vanish / reset helpers ---
 function vanish(i, j) {
   const key = `${i},${j}`;
   if (points[key]) {
@@ -69,29 +67,35 @@ function vanish(i, j) {
   }
 }
 
-// --- animation timeline ---
+function resetAll() {
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < N; j++) {
+      points[`${i},${j}`].classList.remove("gone");
+    }
+  }
+}
+
+// --- animation ---
 let t = 0;
 
 function stepAnimation() {
 
-  // Frame 2–6: (0,0) to (4,0) vanish one by one
+  // (0,0) to (4,0)
   if (t >= 1 && t <= 5) {
     vanish(t - 1, 0);
   }
 
-  // Frame 7: whole x-axis vanishes
+  // whole x-axis
   if (t === 6) {
-    for (let i = 0; i < N; i++) {
-      vanish(i, 0);
-    }
+    for (let i = 0; i < N; i++) vanish(i, 0);
   }
 
-  // Frame 8: (0,1) vanishes
+  // (0,1)
   if (t === 7) {
     vanish(0, 1);
   }
 
-  // Frame 9: everything vanishes simultaneously
+  // everything
   if (t === 8) {
     for (let i = 0; i < N; i++) {
       for (let j = 0; j < N; j++) {
@@ -100,14 +104,19 @@ function stepAnimation() {
     }
   }
 
-  t++;
-  if (t < 12) {
-    setTimeout(stepAnimation, 500);
+  // restart
+  if (t === 12) {
+    resetAll();
+    t = 0;
+    setTimeout(stepAnimation, 600);
+    return;
   }
+
+  t++;
+  setTimeout(stepAnimation, 500);
 }
 
 stepAnimation();
 </script>
-
 </body>
 </html>

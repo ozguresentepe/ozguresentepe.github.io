@@ -1,113 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Auslander-Reiten Lattice Animation</title>
+<title>Esentepe Family</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EJFCKR7Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3EJFCKR7Z5');
+</script>
 
 <style>
-  body {
-    margin: 0;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  svg {
-    background: white;
-  }
-
-  .dot {
-    fill: black;
-    opacity: 1;
-    transition: opacity 0.6s ease;
-  }
-
-  .gone {
-    opacity: 0;
-  }
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
 </style>
 </head>
-
 <body>
 
-<svg id="lattice" width="700" height="700"></svg>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:40px;margin-right:40px">
 
-<script>
-const svg = document.getElementById("lattice");
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Esentepe-Richards Family.</b></h1>
+    <h1 class="w3-xxxlarge w3-text"><b>Members.</b></h1>
+    <hr style="width:50px;border:5px solid" class="w3-round">
+  </div>
+    
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale-max">
+    <!-- Larissa -->
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/larissa.jpeg" alt="Larissa Richards" style="width:100%">
+        <div class="w3-container">
+          <h3>Larissa Richards</h3>
+          <p class="w3-opacity">Mathematician</p>
+          <p>I am a Research Fellow at the University of Leeds. I like probability and statistical physics.
+            You can <a href="larissa/index.html">click here</a> for my personal page.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ozgur-->
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/ozgur.jpg" alt="Ozgur Esentepe" style="width:100%">
+        <div class="w3-container">
+          <h3>Özgür Esentepe</h3>
+          <p class="w3-opacity">Mathematician</p>
+          <p>I am a postdoc at the University of Graz. I like commutative algebra and representation theory.
+            You can <a href="ozgur/index.html">click here</a> for my personal page.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Kopek-->
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/kopek.jpg" alt="Kopek" style="width:100%">
+        <div class="w3-container">
+          <h3>Köpek</h3>
+          <p class="w3-opacity">Dog</p>
+          <p>I am a PostDOGtoral fellow. You can <a href="https://www.instagram.com/kopekthecorgi">click here</a> for my personal page.</p>  </p>
+        </div>
+      </div>
+    </div>
 
-const N = 15;
-const step = 40;
-const r = 6;   // bigger dots
+    <!--D-->
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>D Esentepe</h3>
+          <p class="w3-opacity">Toddler and Performance Artist</p>
+          <p>No, I don't want to write a description.</p>
+        </div>
+      </div>
+    </div>
 
-let points = {};
+    <!--U-->
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>U Esentepe</h3>
+          <p class="w3-opacity">Baby</p>
+          <p>Goo goo gaga.</p>
+        </div>
+      </div>
+    </div>
 
-// --- draw lattice ---
-for (let i = 0; i < N; i++) {
-  for (let j = 0; j < N; j++) {
-    const cx = 50 + i * step;
-    const cy = 650 - j * step;
 
-    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", cx);
-    c.setAttribute("cy", cy);
-    c.setAttribute("cy", cy);
-    c.setAttribute("r", r);
-    c.setAttribute("class", "dot");
 
-    svg.appendChild(c);
-    points[`${i},${j}`] = c;
-  }
-}
-
-// --- vanish helper ---
-function vanish(i, j) {
-  const key = `${i},${j}`;
-  if (points[key]) {
-    points[key].classList.add("gone");
-  }
-}
-
-// --- animation timeline ---
-let t = 0;
-
-function stepAnimation() {
-
-  // Frame 2–6: (0,0) to (4,0) vanish one by one
-  if (t >= 1 && t <= 5) {
-    vanish(t - 1, 0);
-  }
-
-  // Frame 7: whole x-axis vanishes
-  if (t === 6) {
-    for (let i = 0; i < N; i++) {
-      vanish(i, 0);
-    }
-  }
-
-  // Frame 8: (0,1) vanishes
-  if (t === 7) {
-    vanish(0, 1);
-  }
-
-  // Frame 9: everything vanishes simultaneously
-  if (t === 8) {
-    for (let i = 0; i < N; i++) {
-      for (let j = 0; j < N; j++) {
-        vanish(i, j);
-      }
-    }
-  }
-
-  t++;
-  if (t < 12) {
-    setTimeout(stepAnimation, 500);
-  }
-}
-
-stepAnimation();
-</script>
+</div>
 
 </body>
 </html>
